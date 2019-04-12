@@ -1,10 +1,15 @@
+
 install.packages("xtable")
+
+rm(list=ls())
+
+# Banco usado nas análises
 banco <- creditcard_projeto
 
 attach(banco)
 names(banco)
 
-# Resumo das vari�vies
+# Resumo das variávies
 library(xtable)
 xtable(head(banco[ , 1:11]))
 xtable(head(banco[ , 12:23]))
@@ -12,9 +17,14 @@ xtable(head(banco[ , 23:31]))
 
 
 # summario, algumas descritivas do banco de dados.
-xtable(summary(banco[ , 1:5]))
-xtable(summary(banco[ , 6:10]))
-xtable(summary(banco[ , 1:5]))
-xtable(summary(banco[ , 1:5]))
-xtable(summary(banco[ , 12:23]))
-xtable(summary(banco[ , 23:31]))
+library(xtable)
+xtable(summary(banco[ , 1:4]))
+xtable(summary(banco[ , 5:8]))
+xtable(summary(banco[ , 9:12]))
+xtable(summary(banco[ , 13:16]))
+xtable(summary(banco[ , 17:20]))
+xtable(summary(banco[ , 21:24]))
+xtable(summary(banco[ , 25:28]))
+xtable(summary(banco[ , 29:31]))
+
+
