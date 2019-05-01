@@ -1,9 +1,20 @@
 # Começando com a questão de classificação
 install.packages("fBasics")
-
+install.packages("MASS")
 rm(list = ls())
 
-
+library(MASS)
+library(caret)
+library(psych)
+library(ggplot2)
+library(VGAM)
+library(ROCR)
+library(pROC)
+library(InformationValue)
+library(glmnet)
+library(e1071)
+library(RSNNS)
+library(fBasics)
 banco <- creditcard_projeto
 attach(banco)
 names(banco)
@@ -20,18 +31,13 @@ banco <- na.omit(banco)
 
 # hist com todas as variáveis explicativas e procurar as mais simetricas
 
-# Com o banco interio
+### Com Amostra balanceada.
 # Sem seleção de variaveis com todos.
-# Selecao de variáveis com todos.
 # Sem seleção de variaveis com as variáveis simétricas.
-# Selecao de variáveis  com as variáveis simétricas.
-
-
-# Com amostra inteira
+### Com amostra desbalanceada.
 # Sem seleção de variaveis com todos.
-# Selecao de variáveis com todos.
 # Sem seleção de variaveis com as variáveis simétricas.
-# Selecao de variáveis  com as variáveis simétricas.
+
 
 
 ################################################################################################
@@ -53,63 +59,58 @@ hist(V13)
 hist(V15) # OBS
 hist(V19)
 hist(V24)
+###############################################################################################
+## Selecionando o banco balanceado, pouco balanceado e muito desbalanceado.                 ###
+###############################################################################################
+## São 387 que em Class assume 1.   # São 227459 que em Class assume 0.
+vec <- which(Class == 1);          posicoes <- which(Class == 0)
 
-
-################################################################################################
-## Sendo feita banco todo. Fazendo com a distribuição binomial com função de ligação logit    ##
-################################################################################################
-#####################################################################
-## # Sem seleção de variáveis, com o banco inteiro
-#####################################################################
-# Modelo Banco Inteiro Sem Seleção de Variaveis Binomial Logit
-mbissvbl <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-            V28 + Amount,family = binomial(link = "logit"), data = banco)
-summary(mbissvbl)
-# Sem seleção de variáveis.
-#####################################################################
-## Sendo com o banco inteiro. # Selecao de variáveis com todos.
-#####################################################################
-# Com a seleção de variáveis, para verificar quais variáveis se mostram significativas para o 
-# modelo a partir do teste t ao nível de significância de 5%. O modelo final ficou esse.
-# Modelo Banco Inteiro Com Seleção de Variaveis Binomial Logit
-mbicsvbl <- glm(formula = Class ~ V2 + V4 + V5 + V6 + V8 + V10 + V13 +  V14 + V16 + V20 + V21 + V22 + V23 + V27 + 
-            V28 + Amount,family = binomial(link = "logit"), data = banco)
-summary(m1)
-
-################################################################################################
-## Sendo feita em uma amostra. Fazendo com a distribuição binomial com função de ligação logit##
-################################################################################################
-
-#####################################################################
-## Sendo feita em uma amostra. # Selecao de variáveis com todos.
-#####################################################################
-# Posições que assumem 1.
-vec <- which(Class == 1)
-
-# São 387 que em Class assume 0.
-posicoes <- which(Class == 0)
-# São 227459 que em Class assume 1.
-set.seed(1992)
-vec1 <- sample(x = posicoes, size = 387)
 # Pegando uma quantidade de 1's porque o banco é muito desbalanceado, mas estamos balanceando 
 # length(posicoes)/length(vec) = 587.7494. tem 587.7494 cerca de 99,8% de 0's
 # em Class.
+set.seed(1992) # Balanceado.
+vec1 <- sample(x = posicoes, size = length(vec))
+set.seed(1993) # Pouco  Balanceado.
+vec2 <- sample(x = posicoes, size = 2 * length(vec))
+set.seed(1994) # Muito  Desalanceado.
+vec3 <- sample(x = posicoes, size = 3 * length(vec))
 
-# As posições que serão pegas no banco.
-po <- c(vec,vec1)
+po1 <- c(vec,vec1)
+po2 <- c(vec,vec2)
+po3 <- c(vec,vec3)
 # Banco selecionado.
-banco1 <- banco[po, ] 
+banco1 <- banco[po1, ] 
+banco2 <- banco[po2, ] 
+banco3 <- banco[po3, ] 
 
-#####################################################################
-## # Sem Selecao de variáveis.
-#####################################################################
-# Modelo Amostra Sem Seleção de Variaveis Binomial Logit que é igual a com seleção de variáveis.
-massvbl <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                 V28 + Amount,family = binomial(link = "logit"), data = banco1)
-summary(massvbl)
+################################################################################################
+##                         Fazendo com a distribuição binomial com função de ligação logit    ##
+################################################################################################
 
+#################################################################################
+## TODAS AS VARIAVEIS                                                          ##
+#################################################################################
+
+# Modelo Amostra balanceada Binomial Logit
+mabbl1 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                V28 + Amount,family = binomial(link = "logit"), data = banco1)
+summary(mabbl1)
+# Modelo Amostra Pouco balanceada Binomial Logit
+mabbl2 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                V28 + Amount,family = binomial(link = "logit"), data = banco2)
+summary(mabbl2)
+# Modelo Amostra desbalanceada Binomial Logit
+mabbl3 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                V28 + Amount,family = binomial(link = "logit"), data = banco3)
+summary(mabbl3)
+
+
+#################################################################################
+## VARIAVEIS SIMETRICAS                                                        ##
+#################################################################################
 # Observando agora o modelo de regressão binomial com funcao de ligação logit
 # sendo rodado esse modelo apenas com as variáveis mais simetricas do banco
 # sendo elas 7 V4, V9, V11, V13, V5, V19, V24.
@@ -123,73 +124,185 @@ hist(V19)
 hist(V24)
 
 # MODELO COMPLETO SEM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Banco Inteiro Sem Seleção de Variáveis Simetricas Binomial Logit.
-mbissvsbl <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = banco)
-summary(mbissvsbl)
-
-# MODELO COMPLETO COM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Banco Inteiro Com Seleção de Variáveis Simetricas Binomial Logit.
-mbicsvsbl <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19,family = binomial(link = "logit"), data = banco)
-summary(mbicsvsbl)
-
-# MODELO COMPLETO SEM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
 # Modelo Amostra Sem Seleção de Variáveis Simetricas Binomial Logit.
-massvsbl <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = banco1)
-summary(massvsbl)
-
-# MODELO COMPLETO COM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Amostra Com Seleção de Variáveis Simetricas Binomial Logit.
-macsvsbl <- glm(formula = Class ~ V4 + V11 + V13,family = binomial(link = "logit"), data = banco1)
-summary(macsvsbl)
 
 
+# Modelo Amostra balanceada Binomial Logit
+mabbl11 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = banco1)
+summary(mabbl11)
+# Modelo Amostra Pouco balanceada Binomial Logit
+mabbl22 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = banco2)
+summary(mabbl22)
+# Modelo Amostra desbalanceada Binomial Logit
+mabbl33 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = banco3)
+summary(mabbl33)
 
 
 
+################################################################################################
+##          Fazendo com a distribuição binomial com função de ligação probit               ##
+################################################################################################
+
+#################################################################################
+##                             TODAS AS VARIAVEIS                              ##
+#################################################################################
+
+# Modelo Amostra balanceada Analise de discriminante Quadrático  
+mabbp1 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                V28 + Amount,family = binomial(link = "probit"), data = banco1)
+summary(mabbp1)
+# Modelo Amostra Pouco balanceada Analise de discriminante Quadrático  
+mabbp2 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                V28 + Amount,family = binomial(link = "probit"), data = banco2)
+summary(mabbp2)
+# Modelo Amostra desbalanceada Analise de discriminante Quadrático  
+mabbp3 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                V28 + Amount,family = binomial(link = "probit"), data = banco3)
+summary(mabbp3)
 
 
-#####################################################################
-# MLG com dist. binomial e com função de ligação probit.          ###
-#####################################################################
-# Modelo Banco Inteiro Sem Seleção de Variaveis Binomail Probit.
-mbissvbp <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                    V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                    V28 + Amount,family = binomial(link = "probit"), data = banco)
-summary(mbissvbp)
-# O modelo final ficou com o intercepto mais todas as variáveis sendo significativos para o modelo,
-# com distribuição binomial e função de ligação probit.
-
-# Modelo Banco Inteiro Com Seleção de Variaveis Binomail Probit.
-mbicsvbp <- glm(formula = Class ~ V2 + V4 + V5 + V6 + V8 + V10 + V13 + V14 + V16 + V20 + V21 + V22 + V27 + 
-                  V28 + Amount,family = binomial(link = "probit"), data = banco)
-summary(mbicsvbp)
-
-# Modelo Amostra Sem Seleção de Variaveis Binomail Probit. é a mesma com e sem seleção de variáveis pq todas as 
-# variáveis deram siginficativas para o modelo.
-massvbp <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                  V28 + Amount,family = binomial(link = "probit"), data = banco1)
-summary(massvbp)
-
-
+#################################################################################
+##                          VARIAVEIS SIMETRICAS                               ##
+#################################################################################
+# Observando agora o modelo de regressão binomial com funcao de ligação probit
+# sendo rodado esse modelo apenas com as variáveis mais simetricas do banco
+# sendo elas 7 V4, V9, V11, V13, V5, V19, V24.
+# As variáveis mais simetricas foram:
+hist(V4)
+hist(V9)
+hist(V11)
+hist(V13)
+hist(V15) # OBS
+hist(V19)
+hist(V24)
 
 # MODELO COMPLETO SEM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Banco Inteiro Sem Seleção de Variáveis Simetricas Binomial PROBIT.
-mbissvsbp <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = banco)
-summary(mbissvsbp)
+# Modelo Amostra Sem Seleção de Variáveis Simetricas Binomial Probit.
 
-# MODELO COMPLETO COM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Banco Inteiro Com Seleção de Variáveis Simetricas Binomial PROBIT.
-mbicsvsbp <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19,family = binomial(link = "probit"), data = banco)
-summary(mbicsvsbp)
 
-# MODELO COMPLETO SEM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Amostra Sem Seleção de Variáveis Simetricas Binomial PROBIT.
-massvsbp <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = banco1)
-summary(massvsbp)
+# Modelo Amostra balanceada Analise de discriminante Quadrático  
+mabbp11 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = banco1)
+summary(mabbp11)
+# Modelo Amostra Pouco balanceada Analise de discriminante Quadrático  
+mabbp22 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = banco2)
+summary(mabbp22)
+# Modelo Amostra desbalanceada Analise de discriminante Quadrático  
+mabbp33 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = banco3)
+summary(mabbp33)
 
-# MODELO COMPLETO COM SELEÇÃO DE VARIAVEIS COM AS VARIÁVEIS MAIS SIMETRICAS.
-# Modelo Amostra Com Seleção de Variáveis Simetricas Binomial PROBIT.
-massvsbp <- glm(formula = Class ~ V4 + V11 + V13 ,family = binomial(link = "probit"), data = banco1)
-summary(massvsbp)
+
+################################################################################################
+##                         ANALISE LINEAR DE DISCRIMINANTE                                    ##
+################################################################################################
+
+#################################################################################
+## TODAS AS VARIAVEIS                                                          ##
+#################################################################################
+
+library(MASS)
+# Modelo Amostra balanceada Analise Linear Discriminante.
+mabald1 <- lda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                 V28 + Amount, data = banco1)
+summary(mabald1)
+# Modelo Amostra Pouco balanceada Analise Linear Discriminante.
+mabald2 <- lda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                 V28 + Amount, data = banco2)
+summary(mabald2)
+# Modelo Amostra desbalanceada Analise Linear Discriminante.
+mabald3 <- lda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                 V28 + Amount, data = banco3)
+summary(mabald3)
+
+
+#################################################################################
+## VARIAVEIS SIMETRICAS                                                        ##
+#################################################################################
+# Observando agora o modelo de regressão binomial com funcao de ligação probit
+# sendo rodado esse modelo apenas com as variáveis mais simetricas do banco
+# sendo elas 7 V4, V9, V11, V13, V5, V19, V24.
+# As variáveis mais simetricas foram:
+hist(V4)
+hist(V9)
+hist(V11)
+hist(V13)
+hist(V15) # OBS
+hist(V19)
+hist(V24)
+
+# Modelo Amostra Sem Seleção de Variáveis Simetricas Binomial Probit.
+
+
+# Modelo Amostra balanceada Analise Linear Discriminante.
+mabald11 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = banco1)
+summary(mabald11)
+# Modelo Amostra Pouco balanceada Analise Linear Discriminante.
+mabald22 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = banco2)
+summary(mabald22)
+# Modelo Amostra desbalanceada Analise Linear Discriminante.
+mabald33 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = banco3)
+summary(mabald33)
+
+
+
+################################################################################################
+##                         ANALISE DE DISCRIMINANTE Quadrático                              ##
+################################################################################################
+
+#################################################################################
+## TODAS AS VARIAVEIS                                                          ##
+#################################################################################
+
+library(MASS)
+# Modelo Amostra balanceada Analise Linear Discriminante.
+mabaqd1 <- qda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                 V28 + Amount, data = banco1)
+summary(mabaqd1)
+# Modelo Amostra Pouco balanceada Analise Linear Discriminante.
+mabaqd2 <- qda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                 V28 + Amount, data = banco2)
+summary(mabaqd2)
+# Modelo Amostra desbalanceada Analise Linear Discriminante.
+mabaqd3 <- qda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
+                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
+                 V28 + Amount, data = banco3)
+summary(mabaqd3)
+
+
+#################################################################################
+## VARIAVEIS SIMETRICAS                                                        ##
+#################################################################################
+# Observando agora o modelo de regressão binomial com funcao de ligação probit
+# sendo rodado esse modelo apenas com as variáveis mais simetricas do banco
+# sendo elas 7 V4, V9, V11, V13, V5, V19, V24.
+# As variáveis mais simetricas foram:
+hist(V4)
+hist(V9)
+hist(V11)
+hist(V13)
+hist(V15) # OBS
+hist(V19)
+hist(V24)
+
+# Modelo Amostra Sem Seleção de Variáveis Simetricas Binomial Probit.
+
+
+# Modelo Amostra balanceada Analise Linear Discriminante.
+mabaqd11 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = banco1)
+summary(mabaqd11)
+# Modelo Amostra Pouco balanceada Analise Linear Discriminante.
+mabaqd22 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = banco2)
+summary(mabaqd22)
+# Modelo Amostra desbalanceada Analise Linear Discriminante.
+mabaqd33 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = banco3)
+summary(mabaqd33)
+
+# "5-NN", "3-NN", "10-NN"
 
