@@ -61,6 +61,314 @@ apply(banco[25:30], 2, "hist") # "V24" "V25" "V26" "V27" "V28" "Amount"
 par(mfrow = c(3,3))
 hist(V4); hist(V9); hist(V11); hist(V13); hist(V15); hist(V19); hist(V24)
 
+cv <- 10
+k <- 10
+# Matrizes que vao receber as méidas das estimativas de rood mean square error
+# a quantidade dessas matrizes 
+##############################################################################
+rmse1 <- matrix(0,cv,k)
+rmse2 <- matrix(0,cv,k)
+rmse3 <- matrix(0,cv,k)
+rmse4 <- matrix(0,cv,k)
+rmse5 <- matrix(0,cv,k)
+rmse6 <- matrix(0,cv,k)
+rmse7 <- matrix(0,cv,k)
+rmse8 <- matrix(0,cv,k)
+rmse9 <- matrix(0,cv,k)
+rmse10 <- matrix(0,cv,k)
+rmse11 <- matrix(0,cv,k)
+rmse12 <- matrix(0,cv,k)
+rmse13 <- matrix(0,cv,k)
+rmse14 <- matrix(0,cv,k)
+rmse15 <- matrix(0,cv,k)
+rmse16 <- matrix(0,cv,k)
+rmse17 <- matrix(0,cv,k)
+rmse18 <- matrix(0,cv,k)
+rmse19 <- matrix(0,cv,k)
+rmse20 <- matrix(0,cv,k)
+rmse21 <- matrix(0,cv,k)
+rmse22 <- matrix(0,cv,k)
+rmse23 <- matrix(0,cv,k)
+rmse24 <- matrix(0,cv,k)
+rmse25 <- matrix(0,cv,k)
+rmse26 <- matrix(0,cv,k)
+rmse27 <- matrix(0,cv,k)
+rmse28 <- matrix(0,cv,k)
+rmse29 <- matrix(0,cv,k)
+rmse30 <- matrix(0,cv,k)
+rmse31 <- matrix(0,cv,k)
+rmse32 <- matrix(0,cv,k)
+rmse33 <- matrix(0,cv,k)
+rmse34 <- matrix(0,cv,k)
+rmse35 <- matrix(0,cv,k)
+rmse36 <- matrix(0,cv,k)
+rmse37 <- matrix(0,cv,k)
+rmse38 <- matrix(0,cv,k)
+rmse39 <- matrix(0,cv,k)
+rmse40 <- matrix(0,cv,k)
+rmse41 <- matrix(0,cv,k)
+rmse42 <- matrix(0,cv,k)
+rmse43 <- matrix(0,cv,k)
+rmse44 <- matrix(0,cv,k)
+rmse45 <- matrix(0,cv,k)
+rmse46 <- matrix(0,cv,k)
+rmse47 <- matrix(0,cv,k)
+rmse48 <- matrix(0,cv,k)
+rmse49 <- matrix(0,cv,k)
+rmse50 <- matrix(0,cv,k)
+rmse51 <- matrix(0,cv,k)
+rmse52 <- matrix(0,cv,k)
+rmse53 <- matrix(0,cv,k)
+rmse54 <- matrix(0,cv,k)
+rmse55 <- matrix(0,cv,k)
+rmse56 <- matrix(0,cv,k)
+rmse57 <- matrix(0,cv,k)
+rmse58 <- matrix(0,cv,k)
+rmse59 <- matrix(0,cv,k)
+rmse60 <- matrix(0,cv,k)
+rmse61 <- matrix(0,cv,k)
+rmse62 <- matrix(0,cv,k)
+rmse63 <- matrix(0,cv,k)
+rmse64 <- matrix(0,cv,k)
+rmse65 <- matrix(0,cv,k)
+rmse66 <- matrix(0,cv,k)
+rmse67 <- matrix(0,cv,k)
+rmse68 <- matrix(0,cv,k)
+rmse69 <- matrix(0,cv,k)
+rmse70 <- matrix(0,cv,k)
+rmse71 <- matrix(0,cv,k)
+rmse72 <- matrix(0,cv,k)
+
+
+# rae
+##################################################################################
+rae1 <- matrix(0,cv,k)
+rae2 <- matrix(0,cv,k)
+rae3 <- matrix(0,cv,k)
+rae4 <- matrix(0,cv,k)
+rae5 <- matrix(0,cv,k)
+rae6 <- matrix(0,cv,k)
+rae7 <- matrix(0,cv,k)
+rae8 <- matrix(0,cv,k)
+rae9 <- matrix(0,cv,k)
+rae10 <- matrix(0,cv,k)
+rae11 <- matrix(0,cv,k)
+rae12 <- matrix(0,cv,k)
+rae13 <- matrix(0,cv,k)
+rae14 <- matrix(0,cv,k)
+rae15 <- matrix(0,cv,k)
+rae16 <- matrix(0,cv,k)
+rae17 <- matrix(0,cv,k)
+rae18 <- matrix(0,cv,k)
+rae19 <- matrix(0,cv,k)
+rae20 <- matrix(0,cv,k)
+rae21 <- matrix(0,cv,k)
+rae22 <- matrix(0,cv,k)
+rae23 <- matrix(0,cv,k)
+rae24 <- matrix(0,cv,k)
+rae25 <- matrix(0,cv,k)
+rae26 <- matrix(0,cv,k)
+rae27 <- matrix(0,cv,k)
+rae28 <- matrix(0,cv,k)
+rae29 <- matrix(0,cv,k)
+rae30 <- matrix(0,cv,k)
+rae31 <- matrix(0,cv,k)
+rae32 <- matrix(0,cv,k)
+rae33 <- matrix(0,cv,k)
+rae34 <- matrix(0,cv,k)
+rae35 <- matrix(0,cv,k)
+rae36 <- matrix(0,cv,k)
+rae37 <- matrix(0,cv,k)
+rae38 <- matrix(0,cv,k)
+rae39 <- matrix(0,cv,k)
+rae40 <- matrix(0,cv,k)
+rae41 <- matrix(0,cv,k)
+rae42 <- matrix(0,cv,k)
+rae43 <- matrix(0,cv,k)
+rae44 <- matrix(0,cv,k)
+rae45 <- matrix(0,cv,k)
+rae46 <- matrix(0,cv,k)
+rae47 <- matrix(0,cv,k)
+rae48 <- matrix(0,cv,k)
+rae49 <- matrix(0,cv,k)
+rae50 <- matrix(0,cv,k)
+rae51 <- matrix(0,cv,k)
+rae52 <- matrix(0,cv,k)
+rae53 <- matrix(0,cv,k)
+rae54 <- matrix(0,cv,k)
+rae55 <- matrix(0,cv,k)
+rae56 <- matrix(0,cv,k)
+rae57 <- matrix(0,cv,k)
+rae58 <- matrix(0,cv,k)
+rae59 <- matrix(0,cv,k)
+rae60 <- matrix(0,cv,k)
+rae61 <- matrix(0,cv,k)
+rae62 <- matrix(0,cv,k)
+rae63 <- matrix(0,cv,k)
+rae64 <- matrix(0,cv,k)
+rae65 <- matrix(0,cv,k)
+rae66 <- matrix(0,cv,k)
+rae67 <- matrix(0,cv,k)
+rae68 <- matrix(0,cv,k)
+rae69 <- matrix(0,cv,k)
+rae70 <- matrix(0,cv,k)
+rae71 <- matrix(0,cv,k)
+rae72 <- matrix(0,cv,k)
+
+# mae
+####################################################################################
+mae1 <- matrix(0,cv,k)
+mae2 <- matrix(0,cv,k)
+mae3 <- matrix(0,cv,k)
+mae4 <- matrix(0,cv,k)
+mae5 <- matrix(0,cv,k)
+mae6 <- matrix(0,cv,k)
+mae7 <- matrix(0,cv,k)
+mae8 <- matrix(0,cv,k)
+mae9 <- matrix(0,cv,k)
+mae10 <- matrix(0,cv,k)
+mae11 <- matrix(0,cv,k)
+mae12 <- matrix(0,cv,k)
+mae13 <- matrix(0,cv,k)
+mae14 <- matrix(0,cv,k)
+mae15 <- matrix(0,cv,k)
+mae16 <- matrix(0,cv,k)
+mae17 <- matrix(0,cv,k)
+mae18 <- matrix(0,cv,k)
+mae19 <- matrix(0,cv,k)
+mae20 <- matrix(0,cv,k)
+mae21 <- matrix(0,cv,k)
+mae22 <- matrix(0,cv,k)
+mae23 <- matrix(0,cv,k)
+mae24 <- matrix(0,cv,k)
+mae25 <- matrix(0,cv,k)
+mae26 <- matrix(0,cv,k)
+mae27 <- matrix(0,cv,k)
+mae28 <- matrix(0,cv,k)
+mae29 <- matrix(0,cv,k)
+mae30 <- matrix(0,cv,k)
+mae31 <- matrix(0,cv,k)
+mae32 <- matrix(0,cv,k)
+mae33 <- matrix(0,cv,k)
+mae34 <- matrix(0,cv,k)
+mae35 <- matrix(0,cv,k)
+mae36 <- matrix(0,cv,k)
+mae37 <- matrix(0,cv,k)
+mae38 <- matrix(0,cv,k)
+mae39 <- matrix(0,cv,k)
+mae40 <- matrix(0,cv,k)
+mae41 <- matrix(0,cv,k)
+mae42 <- matrix(0,cv,k)
+mae43 <- matrix(0,cv,k)
+mae44 <- matrix(0,cv,k)
+mae45 <- matrix(0,cv,k)
+mae46 <- matrix(0,cv,k)
+mae47 <- matrix(0,cv,k)
+mae48 <- matrix(0,cv,k)
+mae49 <- matrix(0,cv,k)
+mae50 <- matrix(0,cv,k)
+mae51 <- matrix(0,cv,k)
+mae52 <- matrix(0,cv,k)
+mae53 <- matrix(0,cv,k)
+mae54 <- matrix(0,cv,k)
+mae55 <- matrix(0,cv,k)
+mae56 <- matrix(0,cv,k)
+mae57 <- matrix(0,cv,k)
+mae58 <- matrix(0,cv,k)
+mae59 <- matrix(0,cv,k)
+mae60 <- matrix(0,cv,k)
+mae61 <- matrix(0,cv,k)
+mae62 <- matrix(0,cv,k)
+mae63 <- matrix(0,cv,k)
+mae64 <- matrix(0,cv,k)
+mae65 <- matrix(0,cv,k)
+mae66 <- matrix(0,cv,k)
+mae67 <- matrix(0,cv,k)
+mae68 <- matrix(0,cv,k)
+mae69 <- matrix(0,cv,k)
+mae70 <- matrix(0,cv,k)
+mae71 <- matrix(0,cv,k)
+mae72 <- matrix(0,cv,k)
+
+# rrse
+######################################################################################
+rrse1 <- matrix(0,cv,k)
+rrse2 <- matrix(0,cv,k)
+rrse3 <- matrix(0,cv,k)
+rrse4 <- matrix(0,cv,k)
+rrse5 <- matrix(0,cv,k)
+rrse6 <- matrix(0,cv,k)
+rrse7 <- matrix(0,cv,k)
+rrse8 <- matrix(0,cv,k)
+rrse9 <- matrix(0,cv,k)
+rrse10 <- matrix(0,cv,k)
+rrse11 <- matrix(0,cv,k)
+rrse12 <- matrix(0,cv,k)
+rrse13 <- matrix(0,cv,k)
+rrse14 <- matrix(0,cv,k)
+rrse15 <- matrix(0,cv,k)
+rrse16 <- matrix(0,cv,k)
+rrse17 <- matrix(0,cv,k)
+rrse18 <- matrix(0,cv,k)
+rrse19 <- matrix(0,cv,k)
+rrse20 <- matrix(0,cv,k)
+rrse21 <- matrix(0,cv,k)
+rrse22 <- matrix(0,cv,k)
+rrse23 <- matrix(0,cv,k)
+rrse24 <- matrix(0,cv,k)
+rrse25 <- matrix(0,cv,k)
+rrse26 <- matrix(0,cv,k)
+rrse27 <- matrix(0,cv,k)
+rrse28 <- matrix(0,cv,k)
+rrse29 <- matrix(0,cv,k)
+rrse30 <- matrix(0,cv,k)
+rrse31 <- matrix(0,cv,k)
+rrse32 <- matrix(0,cv,k)
+rrse33 <- matrix(0,cv,k)
+rrse34 <- matrix(0,cv,k)
+rrse35 <- matrix(0,cv,k)
+rrse36 <- matrix(0,cv,k)
+rrse37 <- matrix(0,cv,k)
+rrse38 <- matrix(0,cv,k)
+rrse39 <- matrix(0,cv,k)
+rrse40 <- matrix(0,cv,k)
+rrse41 <- matrix(0,cv,k)
+rrse42 <- matrix(0,cv,k)
+rrse43 <- matrix(0,cv,k)
+rrse44 <- matrix(0,cv,k)
+rrse45 <- matrix(0,cv,k)
+rrse46 <- matrix(0,cv,k)
+rrse47 <- matrix(0,cv,k)
+rrse48 <- matrix(0,cv,k)
+rrse49 <- matrix(0,cv,k)
+rrse50 <- matrix(0,cv,k)
+rrse51 <- matrix(0,cv,k)
+rrse52 <- matrix(0,cv,k)
+rrse53 <- matrix(0,cv,k)
+rrse54 <- matrix(0,cv,k)
+rrse55 <- matrix(0,cv,k)
+rrse56 <- matrix(0,cv,k)
+rrse57 <- matrix(0,cv,k)
+rrse58 <- matrix(0,cv,k)
+rrse59 <- matrix(0,cv,k)
+rrse60 <- matrix(0,cv,k)
+rrse61 <- matrix(0,cv,k)
+rrse62 <- matrix(0,cv,k)
+rrse63 <- matrix(0,cv,k)
+rrse64 <- matrix(0,cv,k)
+rrse65 <- matrix(0,cv,k)
+rrse66 <- matrix(0,cv,k)
+rrse67 <- matrix(0,cv,k)
+rrse68 <- matrix(0,cv,k)
+rrse69 <- matrix(0,cv,k)
+rrse70 <- matrix(0,cv,k)
+rrse71 <- matrix(0,cv,k)
+rrse72 <- matrix(0,cv,k)
+
+
+for(i in 1:k){
+  for(j in 1:cv){  
+
 ###############################################################################################
 ## Selecionando o banco balanceado, pouco balanceado e muito desbalanceado.                 ###
 ###############################################################################################
@@ -69,11 +377,11 @@ vec <- which(Class == 1);          posicoes <- which(Class == 0)
 # Pegando uma quantidade de 1's porque o banco é muito desbalanceado, mas estamos balanceando 
 # length(posicoes)/length(vec) = 587.7494. tem 587.7494 cerca de 99,8% de 0's
 # em Class.
-set.seed(1992) # Balanceado.
+# Balanceado.
 vec1 <- sample(x = posicoes, size = length(vec))
-set.seed(1993) # Pouco  Balanceado.
+# Pouco  Balanceado.
 vec2 <- sample(x = posicoes, size = 2 * length(vec))
-set.seed(1994) # Muito  Desalanceado.
+# Muito  Desalanceado.
 vec3 <- sample(x = posicoes, size = 3 * length(vec))
 
 po1 <- c(vec,vec1)
@@ -91,12 +399,9 @@ banco6 <- banco[po3,a]
 
 # Separando os 10 folds.
 require(caret); 
-cv <- 10
 flds1 <- createDataPartition(banco1$Class, times = cv, p = 0.2, list = TRUE)
 flds2 <- createDataPartition(banco2$Class, times = cv, p = 0.2, list = TRUE)
 flds3 <- createDataPartition(banco3$Class, times = cv, p = 0.2, list = TRUE)
-
-
 ################################################################
 # Lista com os elementos separados para treino. # fold1
 ################################################################
@@ -192,16 +497,16 @@ train59 <- banco5[-flds2[[9]], ]
 train510 <- banco5[-flds2[[10]], ]
 mat_treino5 <- list(train51, train52, train53, train54, train55, train56, train57, train58, train59, train510)
 # Lista com os elementos separados para teste.
-teste21 <- banco5[flds2[[1]], ]
-teste22 <- banco5[flds2[[2]], ]
-teste23 <- banco5[flds2[[3]], ]
-teste24 <- banco5[flds2[[4]], ]
-teste25 <- banco5[flds2[[5]], ]
-teste26 <- banco5[flds2[[6]], ]
-teste27 <- banco5[flds2[[7]], ]
-teste28 <- banco5[flds2[[8]], ]
-teste29 <- banco5[flds2[[9]], ]
-teste210 <- banco5[flds2[[10]], ]
+teste51 <- banco5[flds2[[1]], ]
+teste52 <- banco5[flds2[[2]], ]
+teste53 <- banco5[flds2[[3]], ]
+teste54 <- banco5[flds2[[4]], ]
+teste55 <- banco5[flds2[[5]], ]
+teste56 <- banco5[flds2[[6]], ]
+teste57 <- banco5[flds2[[7]], ]
+teste58 <- banco5[flds2[[8]], ]
+teste59 <- banco5[flds2[[9]], ]
+teste510 <- banco5[flds2[[10]], ]
 mat_teste5 <- list(teste51, teste52, teste53, teste54, teste55, teste56, teste57, teste58, teste59, teste510)
 
 
@@ -264,8 +569,6 @@ mat_teste6 <- list(teste61, teste62, teste63, teste64, teste65, teste66, teste67
 ################################################################################################
 # Modelo Amostra balanceada, Pouco balanceada e desbalanceada Analise Binomial Logit
 
-for(i in 1:k){
-  for(j in 1:cv){  
 m1 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino1[[i]]); # summary(mabbl1)
@@ -372,27 +675,32 @@ rrse12[i,j] <- rrse(t12,mat_teste6[[i]][1])
 m13 <- lda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino1[[i]]); # summary(mabald1)
-t13 <- predict(m13, mat_teste1[[i]], type = "response")
-rmse13[i,j] <- RMSE(t13,mat_teste1[[i]][31])
-rae13[i,j] <- rae(t13,mat_teste1[[i]][31])
-mae13[i,j] <- mae(t13,mat_teste1[[i]][31])
-rrse13[i,j] <- rrse(t13,mat_teste1[[i]][31])
+t13 <- predict(m13, mat_teste1[[i]])
+b13 <- ifelse(t13$class == 1, 1, 0)
+rmse13[i,j] <- RMSE(b13,mat_teste1[[i]][31])
+
+rae13[i,j] <- rae(t13$class,mat_teste1[[i]][31])
+
+mae13[i,j] <- mae(t13$class,mat_teste1[[i]][31])
+
+rrse13[i,j] <- rrse(t13$class,mat_teste1[[i]][31])
+
 m14 <- lda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino2[[i]]); # summary(mabald2)
 t14 <- predict(m14, mat_teste2[[i]], type = "response")
-rmse14[i,j] <- RMSE(t14,mat_teste2[[i]][31])
-rae14[i,j] <- rae(t14,mat_teste2[[i]][31])
-mae14[i,j] <- mae(t14,mat_teste2[[i]][31])
-rrse14[i,j] <- rrse(t14,mat_teste2[[i]][31])
+rmse14[i,j] <- RMSE(t14$class,mat_teste2[[i]][31])
+rae14[i,j] <- rae(t14$class,mat_teste2[[i]][31])
+mae14[i,j] <- mae(t14$class,mat_teste2[[i]][31])
+rrse14[i,j] <- rrse(t14$class,mat_teste2[[i]][31])
 m15 <- lda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino3[[i]]); # summary(mabald3)
 t15 <- predict(m15, mat_teste3[[i]], type = "response")
-rmse15[i,j] <- RMSE(t15,mat_teste3[[i]][31])
-rae15[i,j] <- rae(t15,mat_teste3[[i]][31])
-mae15[i,j] <- mae(t15,mat_teste3[[i]][31])
-rrse15[i,j] <- rrse(t15,mat_teste3[[i]][31])
+rmse15[i,j] <- RMSE(t15$class,mat_teste3[[i]][31])
+rae15[i,j] <- rae(t15$class,mat_teste3[[i]][31])
+mae15[i,j] <- mae(t15$class,mat_teste3[[i]][31])
+rrse15[i,j] <- rrse(t15$class,mat_teste3[[i]][31])
 ##############################################
 ## VARIAVEIS SIMETRICAS                    ##
 #############################################
