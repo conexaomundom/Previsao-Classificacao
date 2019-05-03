@@ -24,14 +24,11 @@ library(caret)
 library(randomForest)
 library(glmnet)
 
-
-
-rmse <- function(y,y_hat){ sqrt(mean((y - y_hat)^2)) }
-rae <- function(y, y_hat){ sum(abs(y_hat - y)) / sum(abs(mean(y) - y)) }
-rrse <- function(y, y_hat){ sum((y_hat - y)^2) / sum((mean(y) - y)^2) }
-mae <- function(y, y_hat){ sum( abs(y - y_hat)) /length(y) }
-
-
+correct_prediction <- function(c){ (c[1]+c[4])/sum(c) }
+false_positivo <- function(c){ c[2]/sum(c) }
+false_negativo <- function(c){ c[3]/sum(c) }
+true_positivo <- function(c){ c[4]/sum(c) }
+true_negativo <- function(c){ c[1]/sum(c) }
 
 banco <- creditcard_projeto
 attach(banco)
@@ -365,7 +362,7 @@ rrse70 <- matrix(0,cv,k)
 rrse71 <- matrix(0,cv,k)
 rrse72 <- matrix(0,cv,k)
 
-
+###############################################################################################
 for(i in 1:k){
   for(j in 1:cv){  
 
@@ -564,6 +561,8 @@ teste610 <- banco6[flds3[[10]], ]
 mat_teste6 <- list(teste61, teste62, teste63, teste64, teste65, teste66, teste67, teste68, teste69, teste610)
 
 
+c <- table(t13$class, mat_teste1[[1]][[31]])
+
 ################################################################################################
 ##                         Fazendo com a distribuição binomial com função de ligação logit    ##
 ################################################################################################
@@ -573,48 +572,59 @@ m1 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino1[[i]]); # summary(mabbl1)
 t1 <- predict(m1, mat_teste1[[i]], type = "response")
-rmse1[i,j] <- RMSE(t1,mat_teste1[[i]][31])
-rae1[i,j] <- rae(t1,mat_teste1[[i]][31])
-mae1[i,j] <- mae(t1,mat_teste1[[i]][31])
-rrse1[i,j] <- rrse(t1,mat_teste1[[i]][31])
+t1 <- ifelse(t1 > 0.5, 1, 0)
+rmse1[i,j] <- correct_prediction(table(t1,mat_teste1[[i]]$Class))
+#  <- RMSE(t1,mat_teste1[[i]][31])
+# rae1[i,j] <- rae(t1,mat_teste1[[i]][31])
+# mae1[i,j] <- mae(t1,mat_teste1[[i]][31])
+# rrse1[i,j] <- rrse(t1,mat_teste1[[i]][31])
 m2 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino2[[i]]); # summary(mabbl2)
 t2 <- predict(m2, mat_teste2[[i]], type = "response")
-rmse2[i,j] <- RMSE(t2,mat_teste2[[i]][31])
-rae2[i,j] <- rae(t2,mat_teste2[[i]][31])
-mae2[i,j] <- mae(t2,mat_teste2[[i]][31])
-rrse2[i,j] <- rrse(t2,mat_teste2[[i]][31])
+t2 <- ifelse(t2 > 0.5, 1, 0)
+rmse2[i,j] <- correct_prediction(table(t2,mat_teste2[[i]]$Class))
+# rae2[i,j] <- rae(t2,mat_teste2[[i]][31])
+# mae2[i,j] <- mae(t2,mat_teste2[[i]][31])
+# rrse2[i,j] <- rrse(t2,mat_teste2[[i]][31])
 m3 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino3[[i]]); # summary(mabbl3)
 t3 <- predict(m3, mat_teste3[[i]], type = "response")
-rmse3[i,j] <- RMSE(t3,mat_teste3[[i]][31])
-rae3[i,j] <- rae(t3,mat_teste3[[i]][31])
-mae3[i,j] <- mae(t3,mat_teste3[[i]][31])
-rrse3[i,j] <- rrse(t3,mat_teste3[[i]][31])
+t3 <- ifelse(t3 > 0.5, 1, 0)
+rmse3[i,j] <- correct_prediction(table(t3,mat_teste3[[i]]$Class))
+# rmse3[i,j] <- RMSE(t3,mat_teste3[[i]][31])
+# rae3[i,j] <- rae(t3,mat_teste3[[i]][31])
+# mae3[i,j] <- mae(t3,mat_teste3[[i]][31])
+# rrse3[i,j] <- rrse(t3,mat_teste3[[i]][31])
 ##########################
 ## VARIAVEIS SIMETRICAS ##
 ##########################
 # Modelo Amostra balanceada, Pouco balanceada, desbalanceada Binomial Logit de Variáveis Simetricas.
 m4 <- glm(formula =Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino4[[i]]); # summary(mabbl11)
 t4 <- predict(m4, mat_teste4[[i]], type = "response")
-rmse4[i,j] <- RMSE(t4,mat_teste4[[i]][1])
-rae4[i,j] <- rae(t4,mat_teste4[[i]][1])
-mae4[i,j] <- mae(t4,mat_teste4[[i]][1])
-rrse4[i,j] <- rrse(t4,mat_teste4[[i]][1])
+t4 <- ifelse(t4 > 0.5, 1, 0)
+rmse4[i,j] <- correct_prediction(table(t4,mat_teste4[[i]]$Class))
+# rmse4[i,j] <- RMSE(t4,mat_teste4[[i]][1])
+# rae4[i,j] <- rae(t4,mat_teste4[[i]][1])
+# mae4[i,j] <- mae(t4,mat_teste4[[i]][1])
+# rrse4[i,j] <- rrse(t4,mat_teste4[[i]][1])
 m5 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino5[[i]]); # summary(mabbl22)
 t5 <- predict(m5, mat_teste5[[i]], type = "response")
-rmse5[i,j] <- RMSE(t5,mat_teste5[[i]][1])
-rae5[i,j] <- rae(t5,mat_teste5[[i]][1])
-mae5[i,j] <- mae(t5,mat_teste5[[i]][1])
-rrse5[i,j] <- rrse(t5,mat_teste5[[i]][1])
+t4 <- ifelse(t4 > 0.5, 1, 0)
+rmse4[i,j] <- correct_prediction(table(t4,mat_teste4[[i]]$Class))
+# rmse5[i,j] <- RMSE(t5,mat_teste5[[i]][1])
+# rae5[i,j] <- rae(t5,mat_teste5[[i]][1])
+# mae5[i,j] <- mae(t5,mat_teste5[[i]][1])
+# rrse5[i,j] <- rrse(t5,mat_teste5[[i]][1])
 m6 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino6[[i]]); # summary(mabbl33)
 t6 <- predict(m6, mat_teste6[[i]], type = "response")
-rmse6[i,j] <- RMSE(t6,mat_teste6[[i]][1])
-rae6[i,j] <- rae(t6,mat_teste6[[i]][1])
-mae6[i,j] <- mae(t6,mat_teste6[[i]][1])
-rrse6[i,j] <- rrse(t6,mat_teste6[[i]][1])
+t4 <- ifelse(t4 > 0.5, 1, 0)
+rmse4[i,j] <- correct_prediction(table(t4,mat_teste4[[i]]$Class))
+# rmse6[i,j] <- RMSE(t6,mat_teste6[[i]][1])
+# rae6[i,j] <- rae(t6,mat_teste6[[i]][1])
+# mae6[i,j] <- mae(t6,mat_teste6[[i]][1])
+# rrse6[i,j] <- rrse(t6,mat_teste6[[i]][1])
 
 ################################################################################################
 ##          Fazendo com a distribuição binomial com função de ligação probit               ##
@@ -677,6 +687,8 @@ m13 <- lda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11
                  V28 + Amount, data = mat_treino1[[i]]); # summary(mabald1)
 t13 <- predict(m13, mat_teste1[[i]])
 b13 <- ifelse(t13$class == 1, 1, 0)
+
+
 rmse13[i,j] <- RMSE(b13,mat_teste1[[i]][31])
 
 rae13[i,j] <- rae(t13$class,mat_teste1[[i]][31])
