@@ -758,7 +758,7 @@ t60 <- ifelse(t60 > 0.5, 1, 0)
 cp60[i,j] <- correct_prediction(table(t60,mat_teste6[[i]]$Class))
 
 ########################################################################################
-## #############################Cresce a árvore 
+## #############################Classificação Trees 
 #######################################################################################
 m61 <- rpart( Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
@@ -967,7 +967,7 @@ boxplot(a,b,c,d,e,f,g,h,i,j,k, main = "Desempenho em média dos modelo de classi
 
 # Observando o boxplot é possivel ver o modelo de classificação que tem menor variação sendo nos
 # tres cenários os modelo de classificação com melhor desempenho foi mlg com distibuiçao binomial
-# com funçao de ligação logit e probit e o modelo de classificação cresce a árvore, que teve a 
+# com funçao de ligação logit e probit e o modelo de classificação Classificação Trees, que teve a 
 # menor varição e em media tem o melhor desempenho. Os modelo de classificação com desempenhos ruins 
 # foram os knn com k = 5, 3 e 10, pois a variáçaõ foi alta, tendo classificação
 # que tem pedição correta chgeando a 90%, mas em média fica em torno dos 83%, porém
@@ -1053,9 +1053,9 @@ l2 <- c(mean(cp70),
 x11()
 par(mfrow = c(2,1))
 boxplot(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de classificação utilizando todas as variáveis", 
-        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridge, Lasso, Elastic, Cresce Árvore")
+        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridge, Lasso, Elastic, Classificação Trees")
 boxplot(a1,b1,c1,d1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de classificação utilizando todas as variáveis", 
-         ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, Reg Ridge, Lasso, Elastic, Cresce Árvore")
+         ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, Reg Ridge, Lasso, Elastic, Classificação Trees")
 # Com todos os métodos e retirando os KNN's é possivel visualizar o desempenho dos melhores modelo de classificação
 # tendo um desempenho de 91% a 95%, em que os modelo de classificação probit e logit tendo mais outlier encontrando
 # a explicação de ter dado como o melhor método, porem em geral não é isso que ocorree, poorque esse
@@ -1064,10 +1064,10 @@ boxplot(a1,b1,c1,d1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de clas
 # e quadrático.
 par(mfrow = c(1,1))
 boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
+        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Classificação Trees")
 par(mfrow = c(2,1))
 boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
+        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADQ, KNN5, KNN3, KNN10, Classificação Trees")
 boxplot(c2,g2,h2,i2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
         ylab = "Predição correta", xlab = "modelo de classificação ADL, Reg Ridge, Lasso, Elastic")
 
@@ -1215,9 +1215,12 @@ boxplot(A28, A29, A30, main = "Desempenho do modelo de classificação Elasticne
 # com desempenho muito parecido com Lasso unicamente tendo médias menores, ou seja em média é um modelo de
 # classificaçaõ pior que os demais(Regressão Ridge e Lasso).
 
-boxplot(A31, A32, A33, main = "Desempenho do modelo de classificação Cresce Árvore", 
+boxplot(A31, A32, A33, main = "Desempenho do modelo de classificação Trees", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O décimo modelo de classificação Trees teve uma varianção de aproximadamente 84% a 
+# 96% de predição correta, tendo bem menor variação do que observado nos ultimos modelos visto, sendo 
+# o melhor desempenho no terceiro cenário também que tem a média perto de 94% de predição correta,
+# com desempenho bom.
 boxplot(A34, A35, A36, main = "Desempenho do modelo de classificação Random Forest ", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # 
