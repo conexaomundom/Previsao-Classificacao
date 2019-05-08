@@ -341,7 +341,7 @@ mat_teste6 <- list(teste61, teste62, teste63, teste64, teste65, teste66, teste67
 ################################################################################################
 ##                         Fazendo com a distribuição binomial com função de ligação logit    ##
 ################################################################################################
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceada Analise Binomial Logit
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceada Analise Binomial Logit
 
 m1 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
@@ -367,7 +367,7 @@ cp3[i,j] <- correct_prediction(table(t3,mat_teste3[[i]]$Class))
 ##########################
 ## VARIAVEIS SIMETRICAS ##
 ##########################
-# Modelo Amostra balanceada, Pouco balanceada, desbalanceada Binomial Logit de Variáveis Simetricas.
+# modelo de classificação Amostra balanceada, Pouco balanceada, desbalanceada Binomial Logit de Variáveis Simetricas.
 m4 <- glm(formula =Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino4[[i]]); # summary(mabbl11)
 t4 <- predict(m4, mat_teste4[[i]], type = "response")
 t4 <- ifelse(t4 > 0.5, 1, 0)
@@ -387,7 +387,7 @@ cp6[i,j] <- correct_prediction(table(t6,mat_teste6[[i]]$Class))
 ##          Fazendo com a distribuição binomial com função de ligação probit               ##
 ################################################################################################
 
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceadaAnalise Analise de discriminante Quadrático  
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceadaAnalise Analise de discriminante Quadrático  
 m7 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "probit"), data = mat_treino1[[i]]); # summary(mabbp1)
@@ -413,7 +413,7 @@ cp9[i,j] <- correct_prediction(table(t9,mat_teste3[[i]]$Class))
 ########################################
 ##  VARIAVEIS SIMETRICAS             ##
 ####################################### 
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceadaAnalise Simetricas Binomial Probit
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceadaAnalise Simetricas Binomial Probit
 m10 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = mat_treino4[[i]]); #summary(mabbp11)
 t10 <- predict(m10, mat_teste4[[i]], type = "response")
 t10 <- ifelse(t10 > 0.5, 1, 0)
@@ -435,7 +435,7 @@ cp12[i,j] <- correct_prediction(table(t12,mat_teste6[[i]]$Class))
 ################################################################################################
 ##                         ANALISE LINEAR DE DISCRIMINANTE                                    ##
 ################################################################################################
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceadaAnalise Linear Discriminante.
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceadaAnalise Linear Discriminante.
 m13 <- lda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino1[[i]]); # summary(mabald1)
@@ -460,7 +460,7 @@ cp15[i,j] <- correct_prediction(table(t15,mat_teste3[[i]]$Class))
 ##############################################
 ## VARIAVEIS SIMETRICAS                    ##
 #############################################
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceada Analise Linear Discriminante.
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceada Analise Linear Discriminante.
 m16 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]]); # summary(mabald11)
 t16 <- predict(m16, mat_teste4[[i]], type = "response")
 t16 <- ifelse(t16$class == 1, 1, 0)
@@ -479,7 +479,7 @@ cp18[i,j] <- correct_prediction(table(t18,mat_teste6[[i]]$Class))
 ##############################################################################################
 ##                         ANALISE DE DISCRIMINANTE Quadrático                              ##
 ##############################################################################################
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceada Analise Linear Discriminante.
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceada Analise Linear Discriminante.
 m19 <- qda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino1[[i]]); #summary(mabaqd1)
@@ -504,7 +504,7 @@ cp21[i,j] <- correct_prediction(table(t21,mat_teste3[[i]]$Class))
 #######################################
 ##      VARIAVEIS SIMETRICAS         ##
 #######################################
-# Modelo Amostra balanceada, Pouco balanceada e desbalanceada Analise Linear Discriminante.
+# modelo de classificação Amostra balanceada, Pouco balanceada e desbalanceada Analise Linear Discriminante.
 m22 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]]);# summary(mabaqd11)
 t22 <- predict(m22, mat_teste4[[i]], type = "response")
 t22 <- ifelse(t22$class == 1, 1, 0)
@@ -844,8 +844,51 @@ cp72[i,j] <- correct_prediction(table(t72,mat_teste6[[i]]$Class))
 # Para prever todos esses valores é usar o predict.
 # fited1 <- predict(m1,banco_teste1, type = "response")
 
+medias <- c(mean(mean(cp1),mean(cp4)),
+       mean(mean(cp2),mean(cp5)),
+       mean(mean(cp3),mean(cp6)),
+       mean(mean(cp7),mean(cp10)),
+       mean(mean(cp8),mean(cp11)),
+       mean(mean(cp9),mean(cp12)),
+       mean(mean(cp13),mean(cp16)),
+       mean(mean(cp14),mean(cp17)),
+       mean(mean(cp15),mean(cp18)),
+       mean(mean(cp19),mean(cp22)),
+       mean(mean(cp20),mean(cp23)),
+       mean(mean(cp21),mean(cp24)),
+       mean(mean(cp25),mean(cp28)),
+       mean(mean(cp26),mean(cp29)),
+       mean(mean(cp27),mean(cp30)),
+       mean(mean(cp31),mean(cp34)),
+       mean(mean(cp32),mean(cp35)),
+       mean(mean(cp33),mean(cp36)),
+       mean(mean(cp37),mean(cp40)),
+       mean(mean(cp38),mean(cp41)),
+       mean(mean(cp39),mean(cp42)),
+       mean(mean(cp43),mean(cp46)),
+       mean(mean(cp44),mean(cp47)),
+       mean(mean(cp45),mean(cp48)),
+       mean(mean(cp49),mean(cp52)),
+       mean(mean(cp50),mean(cp53)),
+       mean(mean(cp51),mean(cp54)),
+       mean(mean(cp55),mean(cp58)),
+       mean(mean(cp56),mean(cp59)),
+       mean(mean(cp57),mean(cp60)),
+       mean(mean(cp61),mean(cp64)),
+       mean(mean(cp62),mean(cp65)),
+       mean(mean(cp63),mean(cp66)),
+       mean(mean(cp67),mean(cp70)))
+which(medias == max(medias))
+which(medias == min(medias))
+mean(mean(cp68),mean(cp71))
+mean(mean(cp69),mean(cp72))
+plot(medias, pch = 20)
+# Em geral em todos os bancos o mrlhor método foi com o banco mais desbalanceado com o metodo 
+# de regressão logistica em média tendo uma predição correta de 0.9546581 e o pior em média foi 
+# analise de discriminante linear com o banco balanceado.
+
 ###################################################################
-## Olhando o desempenho em geral do modelo.
+## Olhando o desempenho em geral do modelo de classificação.
 ###################################################################
 a <- c(mean(cp1),
 mean(cp2),
@@ -919,17 +962,17 @@ mean(cp69),
 mean(cp70),
 mean(cp71),
 mean(cp72))
-boxplot(a,b,c,d,e,f,g,h,i,j,k, main = "Desempenho em média dos modelos", 
-        ylab = "Predição correta", xlab = "Modelos avaliados")
+boxplot(a,b,c,d,e,f,g,h,i,j,k, main = "Desempenho em média dos modelo de classificação", 
+        ylab = "Predição correta", xlab = "modelo de classificação avaliados")
 
-# Observando o boxplot é possivel ver o modelo que tem menor variação sendo nos
-# tres cenários os modelos com melhor desempenho foi mlg com distibuiçao binomial
-# com funçao de ligação logit e probit e o modelo cresce a árvore, que teve a 
-# menor varição e em media tem o melhor desempenho. Os modelos com desempenhos ruins 
+# Observando o boxplot é possivel ver o modelo de classificação que tem menor variação sendo nos
+# tres cenários os modelo de classificação com melhor desempenho foi mlg com distibuiçao binomial
+# com funçao de ligação logit e probit e o modelo de classificação cresce a árvore, que teve a 
+# menor varição e em media tem o melhor desempenho. Os modelo de classificação com desempenhos ruins 
 # foram os knn com k = 5, 3 e 10, pois a variáçaõ foi alta, tendo classificação
 # que tem pedição correta chgeando a 90%, mas em média fica em torno dos 83%, porém
 # também chega a ter um nívell de predição correta de 65% apenas, demonstrando
-# não ser muito centrado. Porém o pior modelo de classificação ainda foi o random forest
+# não ser muito centrado. Porém o pior modelo de classificação de classificação ainda foi o random forest
 # tendo o chegando no máximo a 75% de predição correta.
 
 ####################################################################
@@ -1009,74 +1052,125 @@ l2 <- c(mean(cp70),
        mean(cp72))
 x11()
 par(mfrow = c(2,1))
-boxplot(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1, main = "Desempenho em média dos modelos utilizando todas as variáveis", 
-        ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridje, Lasso, Elastic, Cresce Árvore")
-boxplot(a1,b1,c1,d1,h1,i1,j1,k1, main = "Desempenho em média dos modelos utilizando todas as variáveis", 
-         ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADL, ADQ, Reg Ridje, Lasso, Elastic, Cresce Árvore")
-# Com todos os métodos e retirando os KNN's é possivel visualizar o desempenho dos melhores modelos
-# tendo um desempenho de 91% a 95%, em que os modelos probit e logit tendo mais outlier encontrando
+boxplot(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de classificação utilizando todas as variáveis", 
+        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridge, Lasso, Elastic, Cresce Árvore")
+boxplot(a1,b1,c1,d1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de classificação utilizando todas as variáveis", 
+         ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, Reg Ridge, Lasso, Elastic, Cresce Árvore")
+# Com todos os métodos e retirando os KNN's é possivel visualizar o desempenho dos melhores modelo de classificação
+# tendo um desempenho de 91% a 95%, em que os modelo de classificação probit e logit tendo mais outlier encontrando
 # a explicação de ter dado como o melhor método, porem em geral não é isso que ocorree, poorque esse
 # outlier como é alto e nós procuramos a média alta, sem observar um gráfico não expressa bem a realidade
 # do desempenho dos métodos os melhores que tiveram menor variação Analise de Discriminante Linear 
 # e quadrático.
 par(mfrow = c(1,1))
-boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelos utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
+boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
+        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
 par(mfrow = c(2,1))
-boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelos utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
-boxplot(c2,g2,h2,i2,k2, main = "Desempenho em média dos modelos utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "Modelos ADL, Reg Ridje, Lasso, Elastic")
+boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
+        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
+boxplot(c2,g2,h2,i2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
+        ylab = "Predição correta", xlab = "modelo de classificação ADL, Reg Ridge, Lasso, Elastic")
 
-# Utilizando os bancos com as componentes principais  simétricas o desempenho dos modelos foi bem
-# melhor variando de 88% a 94% de predição correta, incluindo os três modelos com piores desempenho
-# utilizando todas as componentes principais os modelos de KNN 3, 5 e 10 vizinhos próximos, também
-# estão nesse intervalo de predição correta e os que tiveram pior desempenho foram os modelos de 
-# analise de discriminante linear, Regressão Ridje, Lasso e Elasticnet variando de 88% a 92%, mesmo
-# tendo a variância em todos, melhores modelos variaram de 90% a 94%. 
+# Utilizando os bancos com as componentes principais  simétricas o desempenho dos modelo de classificação foi bem
+# melhor variando de 88% a 94% de predição correta, incluindo os três modelo de classificação com piores desempenho
+# utilizando todas as componentes principais os modelo de classificação de KNN 3, 5 e 10 vizinhos próximos, também
+# estão nesse intervalo de predição correta e os que tiveram pior desempenho foram os modelo de classificação de 
+# analise de discriminante linear, Regressão Ridge, Lasso e Elasticnet variando de 88% a 92%, mesmo
+# tendo a variância em todos, melhores modelo de classificação variaram de 90% a 94%. 
 
 # O melhor metodo vai ser o que é melhor nessas situações tiver o maior 
 # predição correta.
 
-a <- c(mean(mean(cp1),mean(cp4)),
-mean(mean(cp2),mean(cp5)),
-mean(mean(cp3),mean(cp6)),
-mean(mean(cp7),mean(cp10)),
-mean(mean(cp8),mean(cp11)),
-mean(mean(cp9),mean(cp12)),
-mean(mean(cp13),mean(cp16)),
-mean(mean(cp14),mean(cp17)),
-mean(mean(cp15),mean(cp18)),
-mean(mean(cp19),mean(cp22)),
-mean(mean(cp20),mean(cp23)),
-mean(mean(cp21),mean(cp24)),
-mean(mean(cp25),mean(cp28)),
-mean(mean(cp26),mean(cp29)),
-mean(mean(cp27),mean(cp30)),
-mean(mean(cp31),mean(cp34)),
-mean(mean(cp32),mean(cp35)),
-mean(mean(cp33),mean(cp36)),
-mean(mean(cp37),mean(cp40)),
-mean(mean(cp38),mean(cp41)),
-mean(mean(cp39),mean(cp42)),
-mean(mean(cp43),mean(cp46)),
-mean(mean(cp44),mean(cp47)),
-mean(mean(cp45),mean(cp48)),
-mean(mean(cp49),mean(cp52)),
-mean(mean(cp50),mean(cp53)),
-mean(mean(cp51),mean(cp54)),
-mean(mean(cp55),mean(cp58)),
-mean(mean(cp56),mean(cp59)),
-mean(mean(cp57),mean(cp60)),
-mean(mean(cp61),mean(cp64)),
-mean(mean(cp62),mean(cp65)),
-mean(mean(cp63),mean(cp66)),
-mean(mean(cp67),mean(cp70)))
-which(a == max(a))
-which(a == min(a))
-mean(mean(cp68),mean(cp71))
-mean(mean(cp69),mean(cp72))
-plot(a, pch = 20)
-# Em geral em todos os bancos o mrlhor método foi com o banco mais desbalanceado com o metodo 
-# de regressão logistica em média tendo uma predição correta de 0.9546581 e o pior em média foi 
-# analise de discriminante linear com o banco balanceado.
+####################################################################
+## Olhando o desempenho dos modelo de classificação nos senários 
+####################################################################
+A1 <- c(cp1,cp4)
+A2 <- c(cp2,cp5)
+A3 <- c(cp3,cp6)
+A4 <- c(cp7,cp10)
+A5 <- c(cp8,cp11)
+A6 <- c(cp9,cp12)
+A7 <- c(cp13,cp16)
+A8 <- c(cp14,cp17)
+A9 <- c(cp15,cp18)
+A10 <- c(cp19,cp22)
+A11 <- c(cp20,cp23)
+A12 <- c(cp21,cp24)
+A13 <- c(cp25,cp28)
+A14 <- c(cp26,cp29)
+A15 <- c(cp27,cp30)
+A16 <- c(cp31,cp34)
+A17 <- c(cp32,cp35)
+A18 <- c(cp33,cp36)
+A19 <- c(cp37,cp40)
+A20 <- c(cp38,cp41)
+A21 <- c(cp39,cp42)
+A22 <- c(cp43,cp46)
+A23 <- c(cp44,cp47)
+A24 <- c(cp45,cp48)
+A25 <- c(cp49,cp52)
+A26 <- c(cp50,cp53)
+A27 <- c(cp51,cp54)
+A28 <- c(cp55,cp58)
+A29 <- c(cp56,cp59)
+A30 <- c(cp57,cp60)
+A31 <- c(cp61,cp64)
+A32 <- c(cp62,cp65)
+A33 <- c(cp63,cp66)
+A34 <- c(cp67,cp70)
+A35 <- c(cp68,cp71)
+A36 <- c(cp69,cp72)
+par(mfrow = c(1,1))
+boxplot(A1, A2, A3, main = "Desempenho do modelo de classificação Regressão Logistica", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# O primeiro modelo de classificação sendo de regressão logistica teve de uma varianção de aproximadamente
+# 86% a 96% de predição correta podendo obervar pelo boxplot que o melhor desempenho da 
+# regressão logistica foi incontavelmente no terceiro cenário.
+
+boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# O primeiro modelo de classificação sendo probit teve de uma varianção de aproximadamente
+# 86% a 96%, porém com alguns outliers chegando a ser com 65% de predição correta,
+# observando que o modelo pode sté ser bom, mas há situações que ele erra bastante, mas isso 
+# só ocorreu no primeiro e segundo cenário podendo obervar pelo boxplot que o melhor desempenho da 
+# do MLG com distribuição binomial e função de ligação probit foi incontavelmente no terceiro cenário,
+# sem ocorrer de ter outliers.
+
+boxplot(A7, A8, A9, main = "Desempenho do modelo de classificação Analise de discriminante Linear", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A10, A11, A12, main = "Desempenho do modelo de classificação Analise de discriminante Quadrático", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A13, A14, A15, main = "Desempenho do modelo de classificação KNN-5", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A16, A17, A18, main = "Desempenho do modelo de classificação KNN-3", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A19, A20, A21, main = "Desempenho do modelo de classificação KNN-10", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A22, A23, A24, main = "Desempenho do modelo de classificação Regressão Ridge", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A25, A26, A27, main = "Desempenho do modelo de classificação Lasso", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A28, A29, A30, main = "Desempenho do modelo de classificação Elasticnet", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+boxplot(A31, A32, A33, main = "Desempenho do modelo de classificação Cresce Árvore", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
+
+
+
