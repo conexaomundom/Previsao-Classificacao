@@ -1130,7 +1130,7 @@ boxplot(A1, A2, A3, main = "Desempenho do modelo de classificação Regressão L
 
 boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O segundo modelo de classificação sendo probit teve de uma varianção de aproximadamente
+# O segundo modelo de classificação sendo probit teve uma varianção de aproximadamente
 # 86% a 96%, porém com alguns outliers chegando a ser com 65% de predição correta,
 # observando que o modelo pode sté ser bom, mas há situações que ele erra bastante, mas isso 
 # só ocorreu no primeiro e segundo cenário podendo obervar pelo boxplot que o melhor desempenho da 
@@ -1140,21 +1140,21 @@ boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit",
 
 boxplot(A7, A8, A9, main = "Desempenho do modelo de classificação Analise de Discriminante Linear", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O Terceiro modelo de classificação sendo Analise de Discriminante Linear teve de uma varianção 
+# O Terceiro modelo de classificação sendo Analise de Discriminante Linear teve uma varianção 
 # de aproximadamente 85% a 96%, no primeiro e segundo cenário podendo obervar pelo boxplot que a 
 # variação no desempenho do modelo foi maior, e melhor desempenho Analise de Discriminante Linear 
 # foi no terceiro cenário.
 
 boxplot(A10, A11, A12, main = "Desempenho do modelo de classificação Analise de Discriminante Quadrático", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O quarto modelo de classificação sendo Analise de Discriminante Quadrático teve de uma varianção
+# O quarto modelo de classificação sendo Analise de Discriminante Quadrático teve uma varianção
 # de aproximadamente 85% a 95% de predição correta, podendo obervar pelo boxplot que a variação no desempenho do modelo
 # foi maior no primeiro e segundo cenário também, e que o melhor desempenho Analise de Discriminante
 # Quadrático foi no terceiro cenário, com menor varição e maior média. 
 
 boxplot(A13, A14, A15, main = "Desempenho do modelo de classificação KNN-5", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O quinto modelo de classificação sendo KNN-5(5 vizinhos próximos) teve de uma varianção
+# O quinto modelo de classificação sendo KNN-5(5 vizinhos próximos) teve uma varianção
 # de aproximadamente 60% a 92% de predição correta, podendo obervar pelo boxplot que até o
 # momento foi o modelo com o pior desempenho tendo uma variação alta nos três cenários e novamente
 # mesmo muito ruim o resultado ainda sim o melhorzinho se encontra no terceiro cenário e maior média,
@@ -1162,11 +1162,20 @@ boxplot(A13, A14, A15, main = "Desempenho do modelo de classificação KNN-5",
 
 boxplot(A16, A17, A18, main = "Desempenho do modelo de classificação KNN-3", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# # O quinto modelo de classificação sendo KNN-3(3 vizinhos próximos) teve uma varianção
+# de aproximadamente 60% a 93% de predição correta, podendo obervar pelo boxplot que até o
+# momento foi o modelo com o pior desempenho tendo uma variação alta nos três cenários e novamente
+# mesmo muito ruim o resultado ainda sim o melhorzinho se encontra no terceiro cenário e maior média,
+# mesmo sendo a mior média nesse modelo, mas ainda nem cheando a acertar 90% das predições.
 
 boxplot(A19, A20, A21, main = "Desempenho do modelo de classificação KNN-10", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O sexto modelo de classificação sendo KNN-10(10 vizinhos próximos) teve uma varianção
+# de aproximadamente 60% a 93% de predição correta também, observando dos modelos KNN 
+# com 10 vizinhos próximos foi o com menor variação, as caixinhas foram um pouco menores,
+# mas tendo uma variação alta nos três cenários e novamente mesmo muito ruim o resultado ainda sim 
+# o melhorzinho se encontra no terceiro cenário e maior média, mesmo sendo a maior média nesse modelo,
+# mas ainda nem cheando a acertar 90% das predições também.
 
 boxplot(A22, A23, A24, main = "Desempenho do modelo de classificação Regressão Ridge", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
