@@ -1084,42 +1084,55 @@ boxplot(c2,g2,h2,i2,k2, main = "Desempenho em média dos modelo de classificaç�
 ####################################################################
 ## Olhando o desempenho dos modelo de classificação nos senários 
 ####################################################################
+#
 A1 <- c(cp1,cp4)
 A2 <- c(cp2,cp5)
 A3 <- c(cp3,cp6)
+#
 A4 <- c(cp7,cp10)
 A5 <- c(cp8,cp11)
 A6 <- c(cp9,cp12)
+#
 A7 <- c(cp13,cp16)
 A8 <- c(cp14,cp17)
 A9 <- c(cp15,cp18)
+#
 A10 <- c(cp19,cp22)
 A11 <- c(cp20,cp23)
 A12 <- c(cp21,cp24)
+#
 A13 <- c(cp25,cp28)
 A14 <- c(cp26,cp29)
 A15 <- c(cp27,cp30)
+#
 A16 <- c(cp31,cp34)
 A17 <- c(cp32,cp35)
 A18 <- c(cp33,cp36)
+#
 A19 <- c(cp37,cp40)
 A20 <- c(cp38,cp41)
 A21 <- c(cp39,cp42)
+#
 A22 <- c(cp43,cp46)
 A23 <- c(cp44,cp47)
 A24 <- c(cp45,cp48)
+#
 A25 <- c(cp49,cp52)
 A26 <- c(cp50,cp53)
 A27 <- c(cp51,cp54)
+#
 A28 <- c(cp55,cp58)
 A29 <- c(cp56,cp59)
 A30 <- c(cp57,cp60)
-A31 <- c(cp61,cp64)
-A32 <- c(cp62,cp65)
-A33 <- c(cp63,cp66)
-A34 <- c(cp67,cp70)
-A35 <- c(cp68,cp71)
-A36 <- c(cp69,cp72)
+#
+A30 <- c(cp61,cp64)
+A31 <- c(cp62,cp65)
+A32 <- c(cp63,cp66)
+#
+A33 <- c(cp67,cp70)
+A34 <- c(cp68,cp71)
+A35 <- c(cp69,cp72)
+
 par(mfrow = c(1,1))
 boxplot(A1, A2, A3, main = "Desempenho do modelo de classificação Regressão Logistica", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
@@ -1190,18 +1203,23 @@ boxplot(A25, A26, A27, main = "Desempenho do modelo de classificação Lasso",
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O oitavo modelo de classificação sendo Lasso teve uma varianção de aproximadamente 86% a 
 # 95% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
-# no melhor desempenho desse modelo, porém um modelo que mesmo acertando muito bem uma vez ou outra 
-# mas na maioria das vezes errando não é tão bom quanto um que acerta com uma porcentagem boa (não muito, mas boa)
-# mas variando menos é considerado em certa ocasião como essa sendo com melhor desempenho se encontra no terceiro cenário 
+# no melhor desempenho desse modelo, sendo o melhor desempenho no terceiro cenário 
 # que tem a média perto de 90% de predição correta também, com desempenho muito parecido com o de regressão Ridge.
 
 boxplot(A28, A29, A30, main = "Desempenho do modelo de classificação Elasticnet", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O nono modelo de classificação sendo Elasticnet teve uma varianção de aproximadamente 86% a 
+# 95% de predição correta, muito proximo da regresssão Ridge e Lasso, e também tendo uma variação 
+# alta no segundo cenário, mesmo tendo outliers que chegam no melhor desempenho desse modelo, sendo 
+# o melhor desempenho no terceiro cenário que tem a média perto de 90% de predição correta também,
+# com desempenho muito parecido com Lasso unicamente tendo médias menores, ou seja em média é um modelo de
+# classificaçaõ pior que os demais(Regressão Ridge e Lasso).
 
 boxplot(A31, A32, A33, main = "Desempenho do modelo de classificação Cresce Árvore", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # 
-
+boxplot(A34, A35, A36, main = "Desempenho do modelo de classificação Random Forest ", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# 
 
 
