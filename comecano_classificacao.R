@@ -141,6 +141,7 @@ cp72 <- matrix(0,cv,k)
 
 ###############################################################################################
 for(i in 1:k){
+  iteração <- 1
   for(j in 1:cv){  
 
 ###############################################################################################
@@ -687,7 +688,7 @@ cp50[i,j] <- correct_prediction(table(t50,mat_teste2[[i]]$Class))
 
 
 m51 = glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 1) # Regressão Ridge
-lambda.ridge3 <- cv.glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+lambda.lasso3 <- cv.glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
 t51 <- predict(m51, as.matrix(mat_teste3[[i]][-31]), s = lambda.lasso3$lambda.min)
 t51 <- ifelse(t51 > 0.5, 1, 0)
 cp51[i,j] <- correct_prediction(table(t51,mat_teste3[[i]]$Class))
@@ -836,7 +837,246 @@ m72 <- randomForest(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_tr
 t72 <- predict(m72, mat_teste6[[i]], type = "class")
 t72 <- ifelse(t72 == 1, 1, 0)
 cp72[i,j] <- correct_prediction(table(t72,mat_teste6[[i]]$Class))
-}
+  }
+  iteração <- iteração + 1
+  print(iteração)
 }
 # Para prever todos esses valores é usar o predict.
 # fited1 <- predict(m1,banco_teste1, type = "response")
+
+###################################################################
+## Olhando o desempenho em geral do modelo.
+###################################################################
+a <- c(mean(cp1),
+mean(cp2),
+mean(cp3),
+mean(cp4),
+mean(cp5),
+mean(cp6))
+b <- c(mean(cp7),
+mean(cp8),
+mean(cp9),
+mean(cp10),
+mean(cp11),
+mean(cp12))
+c <- c(mean(cp13),
+mean(cp14),
+mean(cp15),
+mean(cp16),
+mean(cp17),
+mean(cp18))
+d <- c(mean(cp19),
+mean(cp20),
+mean(cp21),
+mean(cp22),
+mean(cp23),
+mean(cp24))
+d <- c(mean(cp25),
+mean(cp26),
+mean(cp27),
+mean(cp28),
+mean(cp29),
+mean(cp30))
+e <- c(mean(cp31),
+mean(cp32),
+mean(cp33),
+mean(cp34),
+mean(cp35),
+mean(cp36))
+f  <- c(mean(cp37),
+mean(cp38),
+mean(cp39),
+mean(cp40),
+mean(cp41),
+mean(cp42))
+g <- c(mean(cp43),
+mean(cp44),
+mean(cp45),
+mean(cp46),
+mean(cp47),
+mean(cp48))
+h <- c(mean(cp49),
+mean(cp50),
+mean(cp51),
+mean(cp52),
+mean(cp53),
+mean(cp54))
+i <- c(mean(cp55),
+mean(cp56),
+mean(cp57),
+mean(cp58),
+mean(cp59),
+mean(cp60))
+j <- c(mean(cp61),
+mean(cp62),
+mean(cp63),
+mean(cp64),
+mean(cp65),
+mean(cp66))
+k <- c(mean(cp67),
+mean(cp68),
+mean(cp69),
+mean(cp70),
+mean(cp71),
+mean(cp72))
+boxplot(a,b,c,d,e,f,g,h,i,j,k, main = "Desempenho em média dos modelos", 
+        ylab = "Predição correta", xlab = "Modelos avaliados")
+
+# Observando o boxplot é possivel ver o modelo que tem menor variação sendo nos
+# tres cenários os modelos com melhor desempenho foi mlg com distibuiçao binomial
+# com funçao de ligação logit e probit e o modelo cresce a árvore, que teve a 
+# menor varição e em media tem o melhor desempenho. Os modelos com desempenhos ruins 
+# foram os knn com k = 5, 3 e 10, pois a variáçaõ foi alta, tendo classificação
+# que tem pedição correta chgeando a 90%, mas em média fica em torno dos 83%, porém
+# também chega a ter um nívell de predição correta de 65% apenas, demonstrando
+# não ser muito centrado. Porém o pior modelo de classificação ainda foi o random forest
+# tendo o chegando no máximo a 75% de predição correta.
+
+####################################################################
+## Olhando e comparando as variáveis as variáveis simetricas
+####################################################################
+a1 <- c(mean(cp1),
+       mean(cp2),
+       mean(cp3))
+a2 <- c(mean(cp4),
+       mean(cp5),
+       mean(cp6))
+b1 <- c(mean(cp7),
+       mean(cp8),
+       mean(cp9))
+b2 <- c(mean(cp10),
+       mean(cp11),
+       mean(cp12))
+c1 <- c(mean(cp13),
+       mean(cp14),
+       mean(cp15))
+c2 <- c(mean(cp16),
+       mean(cp17),
+       mean(cp18))
+d1 <- c(mean(cp19),
+       mean(cp20),
+       mean(cp21))
+d2 <- c(mean(cp22),
+       mean(cp23),
+       mean(cp24))
+e1 <- c(mean(cp25),
+       mean(cp26),
+       mean(cp27))
+e2 <- c(mean(cp28),
+       mean(cp29),
+       mean(cp30))
+f1 <- c(mean(cp31),
+       mean(cp32),
+       mean(cp33))
+f2 <- c(mean(cp34),
+       mean(cp35),
+       mean(cp36))
+g1  <- c(mean(cp37),
+        mean(cp38),
+        mean(cp39))
+g2 <- c(mean(cp40),
+        mean(cp41),
+        mean(cp42))
+h1 <- c(mean(cp43),
+       mean(cp44),
+       mean(cp45))
+h2 <- c(mean(cp46),
+       mean(cp47),
+       mean(cp48))
+i1 <- c(mean(cp49),
+       mean(cp50),
+       mean(cp51))
+i2 <- c(mean(cp52),
+       mean(cp53),
+       mean(cp54))
+j1 <- c(mean(cp55),
+       mean(cp56),
+       mean(cp57))
+j2 <- c(mean(cp58),
+       mean(cp59),
+       mean(cp60))
+k1 <- c(mean(cp61),
+       mean(cp62),
+       mean(cp63))
+k2 <- c(mean(cp64),
+       mean(cp65),
+       mean(cp66))
+l1 <- c(mean(cp67),
+       mean(cp68),
+       mean(cp69))
+l2 <- c(mean(cp70),
+       mean(cp71),
+       mean(cp72))
+x11()
+par(mfrow = c(2,1))
+boxplot(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1, main = "Desempenho em média dos modelos utilizando todas as variáveis", 
+        ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridje, Lasso, Elastic, Cresce Árvore")
+boxplot(a1,b1,c1,d1,h1,i1,j1,k1, main = "Desempenho em média dos modelos utilizando todas as variáveis", 
+         ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADL, ADQ, Reg Ridje, Lasso, Elastic, Cresce Árvore")
+# Com todos os métodos e retirando os KNN's é possivel visualizar o desempenho dos melhores modelos
+# tendo um desempenho de 91% a 95%, em que os modelos probit e logit tendo mais outlier encontrando
+# a explicação de ter dado como o melhor método, porem em geral não é isso que ocorree, poorque esse
+# outlier como é alto e nós procuramos a média alta, sem observar um gráfico não expressa bem a realidade
+# do desempenho dos métodos os melhores que tiveram menor variação Analise de Discriminante Linear 
+# e quadrático.
+par(mfrow = c(1,1))
+boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelos utilizando as variáveis simétricas", 
+        ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
+par(mfrow = c(2,1))
+boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelos utilizando as variáveis simétricas", 
+        ylab = "Predição correta", xlab = "Modelos Logit, Probit, ADQ, KNN5, KNN3, KNN10, Cresce Árvore")
+boxplot(c2,g2,h2,i2,k2, main = "Desempenho em média dos modelos utilizando as variáveis simétricas", 
+        ylab = "Predição correta", xlab = "Modelos ADL, Reg Ridje, Lasso, Elastic")
+
+# Utilizando os bancos com as componentes principais  simétricas o desempenho dos modelos foi bem
+# melhor variando de 88% a 94% de predição correta, incluindo os três modelos com piores desempenho
+# utilizando todas as componentes principais os modelos de KNN 3, 5 e 10 vizinhos próximos, também
+# estão nesse intervalo de predição correta e os que tiveram pior desempenho foram os modelos de 
+# analise de discriminante linear, Regressão Ridje, Lasso e Elasticnet variando de 88% a 92%, mesmo
+# tendo a variância em todos, melhores modelos variaram de 90% a 94%. 
+
+# O melhor metodo vai ser o que é melhor nessas situações tiver o maior 
+# predição correta.
+
+a <- c(mean(mean(cp1),mean(cp4)),
+mean(mean(cp2),mean(cp5)),
+mean(mean(cp3),mean(cp6)),
+mean(mean(cp7),mean(cp10)),
+mean(mean(cp8),mean(cp11)),
+mean(mean(cp9),mean(cp12)),
+mean(mean(cp13),mean(cp16)),
+mean(mean(cp14),mean(cp17)),
+mean(mean(cp15),mean(cp18)),
+mean(mean(cp19),mean(cp22)),
+mean(mean(cp20),mean(cp23)),
+mean(mean(cp21),mean(cp24)),
+mean(mean(cp25),mean(cp28)),
+mean(mean(cp26),mean(cp29)),
+mean(mean(cp27),mean(cp30)),
+mean(mean(cp31),mean(cp34)),
+mean(mean(cp32),mean(cp35)),
+mean(mean(cp33),mean(cp36)),
+mean(mean(cp37),mean(cp40)),
+mean(mean(cp38),mean(cp41)),
+mean(mean(cp39),mean(cp42)),
+mean(mean(cp43),mean(cp46)),
+mean(mean(cp44),mean(cp47)),
+mean(mean(cp45),mean(cp48)),
+mean(mean(cp49),mean(cp52)),
+mean(mean(cp50),mean(cp53)),
+mean(mean(cp51),mean(cp54)),
+mean(mean(cp55),mean(cp58)),
+mean(mean(cp56),mean(cp59)),
+mean(mean(cp57),mean(cp60)),
+mean(mean(cp61),mean(cp64)),
+mean(mean(cp62),mean(cp65)),
+mean(mean(cp63),mean(cp66)),
+mean(mean(cp67),mean(cp70)))
+which(a == max(a))
+which(a == min(a))
+mean(mean(cp68),mean(cp71))
+mean(mean(cp69),mean(cp72))
+plot(a, pch = 20)
+# Em geral em todos os bancos o mrlhor método foi com o banco mais desbalanceado com o metodo 
+# de regressão logistica em média tendo uma predição correta de 0.9546581 e o pior em média foi 
+# analise de discriminante linear com o banco balanceado.
