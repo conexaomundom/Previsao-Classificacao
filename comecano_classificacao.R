@@ -1179,7 +1179,12 @@ boxplot(A19, A20, A21, main = "Desempenho do modelo de classificação KNN-10",
 
 boxplot(A22, A23, A24, main = "Desempenho do modelo de classificação Regressão Ridge", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O sétimo modelo de classificação sendo Regressão Ridge teve uma varianção de aproximadamente 84% a 
+# 95% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
+# no melhor desempenho desse modelo, porém um modelo que mesmo acertando muito bem uma vez ou outra 
+# mas na maioria das vezes errando não é tão bom quanto um que acerta com uma porcentagem boa (não muito, mas boa)
+# mas variando menos é considerado em certa ocasião como essa sendo com melhor desempenho se encontra no terceiro cenário 
+# que tem a média perto de 90% de predição correta.
 
 boxplot(A25, A26, A27, main = "Desempenho do modelo de classificação Lasso", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
