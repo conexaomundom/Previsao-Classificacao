@@ -1221,8 +1221,12 @@ boxplot(A31, A32, A33, main = "Desempenho do modelo de classificação Trees",
 # 96% de predição correta, tendo bem menor variação do que observado nos ultimos modelos visto, sendo 
 # o melhor desempenho no terceiro cenário também que tem a média perto de 94% de predição correta,
 # com desempenho bom.
-boxplot(A34, A35, A36, main = "Desempenho do modelo de classificação Random Forest ", 
+boxplot(A34, A35, A36, main = "Desempenho do modelo de classificação Random Forest", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O décimo primeiro modelo de classificação Random Forest teve uma varianção de aproximadamente 50% a 
+# 65% de predição correta no primeiro cenário, de aproximadamente 65% a 82% de predição correta no 
+# segundo cenário, com variâncias parecidas, já no terceiro cenário a variação foi extremamente pequena
+# tendo uma porcentagem de predição correta em torno de 76% se fosse com essa variação e tivesse uma porcentagem
+# um pouco maior sem dúvidas esse seria o melhor modelo com desempenho muito bom.
 
 
