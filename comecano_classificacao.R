@@ -65,78 +65,78 @@ k <- 10
 # Matrizes que vao receber as méidas das estimativas de rood mean square error
 # a quantidade dessas matrizes 
 ##############################################################################
-rmse1 <- matrix(0,cv,k)
-rmse2 <- matrix(0,cv,k)
-rmse3 <- matrix(0,cv,k)
-rmse4 <- matrix(0,cv,k)
-rmse5 <- matrix(0,cv,k)
-rmse6 <- matrix(0,cv,k)
-rmse7 <- matrix(0,cv,k)
-rmse8 <- matrix(0,cv,k)
-rmse9 <- matrix(0,cv,k)
-rmse10 <- matrix(0,cv,k)
-rmse11 <- matrix(0,cv,k)
-rmse12 <- matrix(0,cv,k)
-rmse13 <- matrix(0,cv,k)
-rmse14 <- matrix(0,cv,k)
-rmse15 <- matrix(0,cv,k)
-rmse16 <- matrix(0,cv,k)
-rmse17 <- matrix(0,cv,k)
-rmse18 <- matrix(0,cv,k)
-rmse19 <- matrix(0,cv,k)
-rmse20 <- matrix(0,cv,k)
-rmse21 <- matrix(0,cv,k)
-rmse22 <- matrix(0,cv,k)
-rmse23 <- matrix(0,cv,k)
-rmse24 <- matrix(0,cv,k)
-rmse25 <- matrix(0,cv,k)
-rmse26 <- matrix(0,cv,k)
-rmse27 <- matrix(0,cv,k)
-rmse28 <- matrix(0,cv,k)
-rmse29 <- matrix(0,cv,k)
-rmse30 <- matrix(0,cv,k)
-rmse31 <- matrix(0,cv,k)
-rmse32 <- matrix(0,cv,k)
-rmse33 <- matrix(0,cv,k)
-rmse34 <- matrix(0,cv,k)
-rmse35 <- matrix(0,cv,k)
-rmse36 <- matrix(0,cv,k)
-rmse37 <- matrix(0,cv,k)
-rmse38 <- matrix(0,cv,k)
-rmse39 <- matrix(0,cv,k)
-rmse40 <- matrix(0,cv,k)
-rmse41 <- matrix(0,cv,k)
-rmse42 <- matrix(0,cv,k)
-rmse43 <- matrix(0,cv,k)
-rmse44 <- matrix(0,cv,k)
-rmse45 <- matrix(0,cv,k)
-rmse46 <- matrix(0,cv,k)
-rmse47 <- matrix(0,cv,k)
-rmse48 <- matrix(0,cv,k)
-rmse49 <- matrix(0,cv,k)
-rmse50 <- matrix(0,cv,k)
-rmse51 <- matrix(0,cv,k)
-rmse52 <- matrix(0,cv,k)
-rmse53 <- matrix(0,cv,k)
-rmse54 <- matrix(0,cv,k)
-rmse55 <- matrix(0,cv,k)
-rmse56 <- matrix(0,cv,k)
-rmse57 <- matrix(0,cv,k)
-rmse58 <- matrix(0,cv,k)
-rmse59 <- matrix(0,cv,k)
-rmse60 <- matrix(0,cv,k)
-rmse61 <- matrix(0,cv,k)
-rmse62 <- matrix(0,cv,k)
-rmse63 <- matrix(0,cv,k)
-rmse64 <- matrix(0,cv,k)
-rmse65 <- matrix(0,cv,k)
-rmse66 <- matrix(0,cv,k)
-rmse67 <- matrix(0,cv,k)
-rmse68 <- matrix(0,cv,k)
-rmse69 <- matrix(0,cv,k)
-rmse70 <- matrix(0,cv,k)
-rmse71 <- matrix(0,cv,k)
-rmse72 <- matrix(0,cv,k)
+cp1 <- matrix(0,cv,k)
+cp2 <- matrix(0,cv,k)
+cp3 <- matrix(0,cv,k)
+cp4 <- matrix(0,cv,k)
+cp5 <- matrix(0,cv,k)
+cp6 <- matrix(0,cv,k)
+cp7 <- matrix(0,cv,k)
+cp8 <- matrix(0,cv,k)
+cp9 <- matrix(0,cv,k)
+cp10 <- matrix(0,cv,k)
+cp11 <- matrix(0,cv,k)
+cp12 <- matrix(0,cv,k)
+cp13 <- matrix(0,cv,k)
+cp14 <- matrix(0,cv,k)
+cp15 <- matrix(0,cv,k)
+cp16 <- matrix(0,cv,k)
+cp17 <- matrix(0,cv,k)
+cp18 <- matrix(0,cv,k)
+cp19 <- matrix(0,cv,k)
+cp20 <- matrix(0,cv,k)
+cp21 <- matrix(0,cv,k)
+cp22 <- matrix(0,cv,k)
+cp23 <- matrix(0,cv,k)
+cp24 <- matrix(0,cv,k)
+cp25 <- matrix(0,cv,k)
+cp26 <- matrix(0,cv,k)
+cp27 <- matrix(0,cv,k)
+cp28 <- matrix(0,cv,k)
+cp29 <- matrix(0,cv,k)
+cp30 <- matrix(0,cv,k)
+cp31 <- matrix(0,cv,k)
+cp32 <- matrix(0,cv,k)
+cp33 <- matrix(0,cv,k)
+cp34 <- matrix(0,cv,k)
+cp35 <- matrix(0,cv,k)
+cp36 <- matrix(0,cv,k)
+cp37 <- matrix(0,cv,k)
+cp38 <- matrix(0,cv,k)
+cp39 <- matrix(0,cv,k)
+cp40 <- matrix(0,cv,k)
+cp41 <- matrix(0,cv,k)
+cp42 <- matrix(0,cv,k)
+cp43 <- matrix(0,cv,k)
+cp44 <- matrix(0,cv,k)
+cp45 <- matrix(0,cv,k)
+cp46 <- matrix(0,cv,k)
+cp47 <- matrix(0,cv,k)
+cp48 <- matrix(0,cv,k)
+cp49 <- matrix(0,cv,k)
+cp50 <- matrix(0,cv,k)
+cp51 <- matrix(0,cv,k)
+cp52 <- matrix(0,cv,k)
+cp53 <- matrix(0,cv,k)
+cp54 <- matrix(0,cv,k)
+cp55 <- matrix(0,cv,k)
+cp56 <- matrix(0,cv,k)
+cp57 <- matrix(0,cv,k)
+cp58 <- matrix(0,cv,k)
+cp59 <- matrix(0,cv,k)
+cp60 <- matrix(0,cv,k)
+cp61 <- matrix(0,cv,k)
+cp62 <- matrix(0,cv,k)
+cp63 <- matrix(0,cv,k)
+cp64 <- matrix(0,cv,k)
+cp65 <- matrix(0,cv,k)
+cp66 <- matrix(0,cv,k)
+cp67 <- matrix(0,cv,k)
+cp68 <- matrix(0,cv,k)
+cp69 <- matrix(0,cv,k)
+cp70 <- matrix(0,cv,k)
+cp71 <- matrix(0,cv,k)
+cp72 <- matrix(0,cv,k)
 
 
 ###############################################################################################
@@ -337,9 +337,6 @@ teste69 <- banco6[flds3[[9]], ]
 teste610 <- banco6[flds3[[10]], ]
 mat_teste6 <- list(teste61, teste62, teste63, teste64, teste65, teste66, teste67, teste68, teste69, teste610)
 
-
-c <- table(t13$class, mat_teste1[[1]][[31]])
-
 ################################################################################################
 ##                         Fazendo com a distribuição binomial com função de ligação logit    ##
 ################################################################################################
@@ -350,21 +347,21 @@ m1 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino1[[i]]); # summary(mabbl1)
 t1 <- predict(m1, mat_teste1[[i]], type = "response")
 t1 <- ifelse(t1 > 0.5, 1, 0)
-rmse1[i,j] <- correct_prediction(table(t1,mat_teste1[[i]]$Class))
+cp1[i,j] <- correct_prediction(table(t1,mat_teste1[[i]]$Class))
 
 m2 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino2[[i]]); # summary(mabbl2)
 t2 <- predict(m2, mat_teste2[[i]], type = "response")
 t2 <- ifelse(t2 > 0.5, 1, 0)
-rmse2[i,j] <- correct_prediction(table(t2,mat_teste2[[i]]$Class))
+cp2[i,j] <- correct_prediction(table(t2,mat_teste2[[i]]$Class))
 
 m3 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "logit"), data = mat_treino3[[i]]); # summary(mabbl3)
 t3 <- predict(m3, mat_teste3[[i]], type = "response")
 t3 <- ifelse(t3 > 0.5, 1, 0)
-rmse3[i,j] <- correct_prediction(table(t3,mat_teste3[[i]]$Class))
+cp3[i,j] <- correct_prediction(table(t3,mat_teste3[[i]]$Class))
 
 ##########################
 ## VARIAVEIS SIMETRICAS ##
@@ -373,17 +370,17 @@ rmse3[i,j] <- correct_prediction(table(t3,mat_teste3[[i]]$Class))
 m4 <- glm(formula =Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino4[[i]]); # summary(mabbl11)
 t4 <- predict(m4, mat_teste4[[i]], type = "response")
 t4 <- ifelse(t4 > 0.5, 1, 0)
-rmse4[i,j] <- correct_prediction(table(t4,mat_teste4[[i]]$Class))
+cp4[i,j] <- correct_prediction(table(t4,mat_teste4[[i]]$Class))
 
 m5 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino5[[i]]); # summary(mabbl22)
 t5 <- predict(m5, mat_teste5[[i]], type = "response")
 t5 <- ifelse(t5 > 0.5, 1, 0)
-rmse5[i,j] <- correct_prediction(table(t5,mat_teste5[[i]]$Class))
+cp5[i,j] <- correct_prediction(table(t5,mat_teste5[[i]]$Class))
 
 m6 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "logit"), data = mat_treino6[[i]]); # summary(mabbl33)
 t6 <- predict(m6, mat_teste6[[i]], type = "response")
 t6 <- ifelse(t6 > 0.5, 1, 0)
-rmse6[i,j] <- correct_prediction(table(t6,mat_teste6[[i]]$Class))
+cp6[i,j] <- correct_prediction(table(t6,mat_teste6[[i]]$Class))
 
 ################################################################################################
 ##          Fazendo com a distribuição binomial com função de ligação probit               ##
@@ -395,21 +392,21 @@ m7 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + 
                 V28 + Amount,family = binomial(link = "probit"), data = mat_treino1[[i]]); # summary(mabbp1)
 t7 <- predict(m7, mat_teste1[[i]], type = "response")
 t7 <- ifelse(t7 > 0.5, 1, 0)
-rmse7[i,j] <- correct_prediction(table(t7,mat_teste1[[i]]$Class))
+cp7[i,j] <- correct_prediction(table(t7,mat_teste1[[i]]$Class))
 
 m8<- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "probit"), data = mat_treino2[[i]]); # summary(mabbp2)
 t8 <- predict(m8, mat_teste2[[i]], type = "response")
 t8 <- ifelse(t8 > 0.5, 1, 0)
-rmse8[i,j] <- correct_prediction(table(t8,mat_teste2[[i]]$Class))
+cp8[i,j] <- correct_prediction(table(t8,mat_teste2[[i]]$Class))
 
 m9 <- glm(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount,family = binomial(link = "probit"), data = mat_treino3[[i]]); # summary(mabbp3)
 t9 <- predict(m9, mat_teste3[[i]], type = "response")
 t9 <- ifelse(t9 > 0.5, 1, 0)
-rmse9[i,j] <- correct_prediction(table(t9,mat_teste3[[i]]$Class))
+cp9[i,j] <- correct_prediction(table(t9,mat_teste3[[i]]$Class))
 
 
 ########################################
@@ -419,19 +416,19 @@ rmse9[i,j] <- correct_prediction(table(t9,mat_teste3[[i]]$Class))
 m10 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = mat_treino4[[i]]); #summary(mabbp11)
 t10 <- predict(m10, mat_teste4[[i]], type = "response")
 t10 <- ifelse(t10 > 0.5, 1, 0)
-rmse10[i,j] <- correct_prediction(table(t10,mat_teste4[[i]]$Class))
+cp10[i,j] <- correct_prediction(table(t10,mat_teste4[[i]]$Class))
 
 
 m11 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = mat_treino5[[i]]); # summary(mabbp22)
 t11 <- predict(m11, mat_teste5[[i]], type = "response")
 t11 <- ifelse(t11 > 0.5, 1, 0)
-rmse11[i,j] <- correct_prediction(table(t11,mat_teste5[[i]]$Class))
+cp11[i,j] <- correct_prediction(table(t11,mat_teste5[[i]]$Class))
 
 
 m12 <- glm(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,family = binomial(link = "probit"), data = mat_treino6[[i]]); # summary(mabbp33)
 t12 <- predict(m12, mat_teste6[[i]], type = "response")
 t12 <- ifelse(t12 > 0.5, 1, 0)
-rmse12[i,j] <- correct_prediction(table(t12,mat_teste6[[i]]$Class))
+cp12[i,j] <- correct_prediction(table(t12,mat_teste6[[i]]$Class))
 
 
 ################################################################################################
@@ -443,21 +440,21 @@ m13 <- lda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11
                  V28 + Amount, data = mat_treino1[[i]]); # summary(mabald1)
 t13 <- predict(m13, mat_teste1[[i]], type = "response")
 t13 <- ifelse(t13$class == 1, 1, 0)
-rmse13[i,j] <- correct_prediction(table(t13,mat_teste1[[i]]$Class))
+cp13[i,j] <- correct_prediction(table(t13,mat_teste1[[i]]$Class))
 
 m14 <- lda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino2[[i]]); # summary(mabald2)
 t14 <- predict(m14, mat_teste2[[i]], type = "response")
 t14 <- ifelse(t14$class == 1, 1, 0)
-rmse14[i,j] <- correct_prediction(table(t14,mat_teste2[[i]]$Class))
+cp14[i,j] <- correct_prediction(table(t14,mat_teste2[[i]]$Class))
 
 m15 <- lda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino3[[i]]); # summary(mabald3)
 t15 <- predict(m15, mat_teste3[[i]], type = "response")
 t15 <- ifelse(t15$class == 1, 1, 0)
-rmse15[i,j] <- correct_prediction(table(t15,mat_teste3[[i]]$Class))
+cp15[i,j] <- correct_prediction(table(t15,mat_teste3[[i]]$Class))
 
 ##############################################
 ## VARIAVEIS SIMETRICAS                    ##
@@ -466,17 +463,17 @@ rmse15[i,j] <- correct_prediction(table(t15,mat_teste3[[i]]$Class))
 m16 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]]); # summary(mabald11)
 t16 <- predict(m16, mat_teste4[[i]], type = "response")
 t16 <- ifelse(t16$class == 1, 1, 0)
-rmse16[i,j] <- correct_prediction(table(t16,mat_teste4[[i]]$Class))
+cp16[i,j] <- correct_prediction(table(t16,mat_teste4[[i]]$Class))
 
 m17 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]]); # summary(mabald22)
 t17 <- predict(m17, mat_teste5[[i]], type = "response")
 t17 <- ifelse(t17$class == 1, 1, 0)
-rmse17[i,j] <- correct_prediction(table(t17,mat_teste5[[i]]$Class))
+cp17[i,j] <- correct_prediction(table(t17,mat_teste5[[i]]$Class))
 
 m18 <- lda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]]); # summary(mabald33)
 t18 <- predict(m18, mat_teste6[[i]], type = "response")
 t18 <- ifelse(t18$class == 1, 1, 0)
-rmse18[i,j] <- correct_prediction(table(t18,mat_teste6[[i]]$Class))
+cp18[i,j] <- correct_prediction(table(t18,mat_teste6[[i]]$Class))
 
 ##############################################################################################
 ##                         ANALISE DE DISCRIMINANTE Quadrático                              ##
@@ -487,21 +484,21 @@ m19 <- qda(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11
                  V28 + Amount, data = mat_treino1[[i]]); #summary(mabaqd1)
 t19 <- predict(m19, mat_teste1[[i]], type = "response")
 t19 <- ifelse(t19$class == 1, 1, 0)
-rmse19[i,j] <- correct_prediction(table(t19,mat_teste1[[i]]$Class))
+cp19[i,j] <- correct_prediction(table(t19,mat_teste1[[i]]$Class))
 
 m20 <- qda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino2[[i]]); #summary(mabaqd2)
 t20 <- predict(m20, mat_teste2[[i]], type = "response")
 t20 <- ifelse(t20$class == 1, 1, 0)
-rmse20[i,j] <- correct_prediction(table(t20,mat_teste2[[i]]$Class))
+cp20[i,j] <- correct_prediction(table(t20,mat_teste2[[i]]$Class))
 
 m21 <- qda(formula = Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
                  V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                  V28 + Amount, data = mat_treino3[[i]]); #summary(mabaqd3)
 t21 <- predict(m21, mat_teste3[[i]], type = "response")
 t21 <- ifelse(t21$class == 1, 1, 0)
-rmse21[i,j] <- correct_prediction(table(t21,mat_teste3[[i]]$Class))
+cp21[i,j] <- correct_prediction(table(t21,mat_teste3[[i]]$Class))
 
 #######################################
 ##      VARIAVEIS SIMETRICAS         ##
@@ -510,295 +507,211 @@ rmse21[i,j] <- correct_prediction(table(t21,mat_teste3[[i]]$Class))
 m22 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]]);# summary(mabaqd11)
 t22 <- predict(m22, mat_teste4[[i]], type = "response")
 t22 <- ifelse(t22$class == 1, 1, 0)
-rmse22[i,j] <- correct_prediction(table(t22,mat_teste4[[i]]$Class))
+cp22[i,j] <- correct_prediction(table(t22,mat_teste4[[i]]$Class))
 
 m23 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]]);# summary(mabaqd22)
 t23 <- predict(m23, mat_teste5[[i]], type = "response")
 t23 <- ifelse(t23$class == 1, 1, 0)
-rmse23[i,j] <- correct_prediction(table(t23,mat_teste5[[i]]$Class))
+cp23[i,j] <- correct_prediction(table(t23,mat_teste5[[i]]$Class))
 
 m24 <- qda(formula = Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]]);# summary(mabaqd33)
 t24 <- predict(m24, mat_teste6[[i]], type = "response")
 t24 <- ifelse(t24$class == 1, 1, 0)
-rmse24[i,j] <- correct_prediction(table(t24,mat_teste6[[i]]$Class))
+cp24[i,j] <- correct_prediction(table(t24,mat_teste6[[i]]$Class))
 
 ########################################################################################
 ## ############################## # "5-NN",
 ######################################################################################
-y25 <- ifelse(mat_teste1[[i]][31] == 1,1,0)
-m25 = knn(mat_treino1[[i]][-31], mat_teste1[[i]][-31], as.factor(y25),k = 5)
-t25 <- predict(m25, as.factor(mat_teste1[[i]]), type = "response")
-t25 <- ifelse(t25$class == 1, 1, 0)
-rmse25[i,j] <- correct_prediction(table(t25,mat_teste1[[i]]$Class))
+m25 = knnreg(mat_treino1[[i]][-31], mat_treino1[[i]]$Class)
+t25 <- predict(m25, mat_teste1[[i]][-31])
+t25 <- ifelse(t25 > 0.5, 1, 0)
+cp25[i,j] <- correct_prediction(table(t25,mat_teste1[[i]]$Class))
 
-m26 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino2[[i]])
-t26 <- predict(m26, mat_teste2[[i]], type = "response")
-t22 <- ifelse(t13$class == 1, 1, 0)
-rmse22[i,j] <- correct_prediction(table(t22,mat_teste4[[i]]$Class))
+m26 = knnreg(mat_treino2[[i]][-31], mat_treino2[[i]]$Class)
+t26 <- predict(m26, mat_teste2[[i]][-31])
+t26 <- ifelse(t26 > 0.5, 1, 0)
+cp26[i,j] <- correct_prediction(table(t26,mat_teste2[[i]]$Class))
 
-m27 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino3[[i]])
-t27 <- predict(m27, mat_teste3[[i]], type = "response")
-t22 <- ifelse(t13$class == 1, 1, 0)
-rmse22[i,j] <- correct_prediction(table(t22,mat_teste4[[i]]$Class))
+m27 = knnreg(mat_treino3[[i]][-31], mat_treino3[[i]]$Class)
+t27 <- predict(m27, mat_teste3[[i]][-31])
+t27 <- ifelse(t27 > 0.5, 1, 0)
+cp27[i,j] <- correct_prediction(table(t27,mat_teste3[[i]]$Class))
 
 #######################################
 ##      VARIAVEIS SIMETRICAS         ##
-#######################################
-m28 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]])
-t28 <- predict(m28, mat_teste4[[i]], type = "response")
-rmse28[i,j] <- RMSE(t27,mat_teste4[[i]][1])
-rae28[i,j] <- rae(t27,mat_teste4[[i]][1])
-mae28[i,j] <- mae(t27,mat_teste4[[i]][1])
-rrse28[i,j] <- rrse(t27,mat_teste4[[i]][1])
-m29 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]])
-t29 <- predict(m29, mat_teste5[[i]], type = "response")
-rmse29[i,j] <- RMSE(t29,mat_teste5[[i]][1])
-rae29[i,j] <- rae(t29,mat_teste5[[i]][1])
-mae29[i,j] <- mae(t29,mat_teste5[[i]][1])
-rrse29[i,j] <- rrse(t29,mat_teste5[[i]][1])
-m30 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]])
-t30 <- predict(m30, mat_teste6[[i]], type = "response")
-rmse30[i,j] <- RMSE(t30,mat_teste6[[i]][1])
-rae30[i,j] <- rae(t30,mat_teste6[[i]][1])
-mae30[i,j] <- mae(t30,mat_teste6[[i]][1])
-rrse30[i,j] <- rrse(t30,mat_teste6[[i]][1])
+######################################
+m28 = knnreg(mat_treino4[[i]][-1], mat_treino4[[i]]$Class)
+t28 <- predict(m28, mat_teste4[[i]][-1])
+t28 <- ifelse(t28 > 0.5, 1, 0)
+cp28[i,j] <- correct_prediction(table(t28,mat_teste4[[i]]$Class))
+
+m29 = knnreg(mat_treino5[[i]][-1], mat_treino5[[i]]$Class)
+t29 <- predict(m29, mat_teste5[[i]][-1])
+t29 <- ifelse(t29 > 0.5, 1, 0)
+cp29[i,j] <- correct_prediction(table(t29,mat_teste5[[i]]$Class))
+
+m30 = knnreg(mat_treino6[[i]][-1], mat_treino6[[i]]$Class)
+t30 <- predict(m30, mat_teste6[[i]][-1])
+t30 <- ifelse(t30 > 0.5, 1, 0)
+cp30[i,j] <- correct_prediction(table(t30,mat_teste6[[i]]$Class))
 
 ########################################################################################
 ## ##############################  "3-NN",
 ######################################################################################
-m31 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino1[[i]], k = 3)
-t31 <- predict(m31, mat_teste1[[i]], type = "response")
-rmse31[i,j] <- RMSE(t31,mat_teste1[[i]][31])
-rae31[i,j] <- rae(t31,mat_teste1[[i]][31])
-mae31[i,j] <- mae(t31,mat_teste1[[i]][31])
-rrse31[i,j] <- rrse(t31,mat_teste1[[i]][31])
-m32 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino2[[i]], k = 3)
-t32 <- predict(m32, mat_teste2[[i]], type = "response")
-rmse32[i,j] <- RMSE(t32,mat_teste2[[i]][31])
-rae32[i,j] <- rae(t32,mat_teste2[[i]][31])
-mae32[i,j] <- mae(t32,mat_teste2[[i]][31])
-rrse32[i,j] <- rrse(t32,mat_teste2[[i]][31])
-m33 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino3[[i]], k = 3)
-t33 <- predict(m33, mat_teste3[[i]], type = "response")
-rmse33[i,j] <- RMSE(t33,mat_teste3[[i]][31])
-rae33[i,j] <- rae(t3,mat_teste3[[i]][31])
-mae33[i,j] <- mae(t33,mat_teste3[[i]][31])
-rrse33[i,j] <- rrse(t33,mat_teste3[[i]][31])
+m31 = knnreg(mat_treino1[[i]][-31], mat_treino1[[i]]$Class, k = 3)
+t31 <- predict(m31, mat_teste1[[i]][-31])
+t31 <- ifelse(t31 > 0.5, 1, 0)
+cp31[i,j] <- correct_prediction(table(t31,mat_teste1[[i]]$Class))
+
+m32 = knnreg(mat_treino2[[i]][-31], mat_treino2[[i]]$Class, k = 3)
+t32 <- predict(m32, mat_teste2[[i]][-31])
+t32 <- ifelse(t32 > 0.5, 1, 0)
+cp32[i,j] <- correct_prediction(table(t32,mat_teste2[[i]]$Class))
+
+m33 = knnreg(mat_treino3[[i]][-31], mat_treino3[[i]]$Class, k = 3)
+t33 <- predict(m33, mat_teste3[[i]][-31])
+t33 <- ifelse(t33 > 0.5, 1, 0)
+cp33[i,j] <- correct_prediction(table(t33,mat_teste3[[i]]$Class))
 
 #######################################
 ##      VARIAVEIS SIMETRICAS         ##
-#######################################
-m34 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], k = 3)
-t34 <- predict(m34, mat_teste4[[i]], type = "response")
-rmse34[i,j] <- RMSE(t34,mat_teste4[[i]][1])
-rae34[i,j] <- rae(t34,mat_teste4[[i]][1])
-mae34[i,j] <- mae(t34,mat_teste4[[i]][1])
-rrse34[i,j] <- rrse(t1,mat_teste4[[i]][1])
-m35 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], k = 3)
-t35 <- predict(m35, mat_teste5[[i]], type = "response")
-rmse35[i,j] <- RMSE(t35,mat_teste5[[i]][1])
-rae35[i,j] <- rae(t35,mat_teste5[[i]][1])
-mae35[i,j] <- mae(t35,mat_teste5[[i]][1])
-rrse35[i,j] <- rrse(t1,mat_teste5[[i]][1])
-m36 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], k = 3)
-t36 <- predict(m36, mat_teste6[[i]], type = "response")
-rmse36[i,j] <- RMSE(t36,mat_teste6[[i]][1])
-rae36[i,j] <- rae(t36,mat_teste6[[i]][1])
-mae36[i,j] <- mae(t36,mat_teste6[[i]][1])
-rrse36[i,j] <- rrse(t36,mat_teste6[[i]][1])
+######################################
+m34 = knnreg(mat_treino4[[i]][-1], mat_treino4[[i]]$Class, k = 3)
+t34 <- predict(m34, mat_teste4[[i]][-1])
+t34 <- ifelse(t34 > 0.5, 1, 0)
+cp34[i,j] <- correct_prediction(table(t34,mat_teste4[[i]]$Class))
+
+m35 = knnreg(mat_treino5[[i]][-1], mat_treino5[[i]]$Class, k = 3)
+t35 <- predict(m35, mat_teste5[[i]][-1])
+t35 <- ifelse(t35 > 0.5, 1, 0)
+cp35[i,j] <- correct_prediction(table(t35,mat_teste2[[i]]$Class))
+
+m36 = knnreg(mat_treino6[[i]][-1], mat_treino6[[i]]$Class, k = 3)
+t36 <- predict(m36, mat_teste6[[i]][-1])
+t36 <- ifelse(t36 > 0.5, 1, 0)
+cp36[i,j] <- correct_prediction(table(t36,mat_teste6[[i]]$Class))
 
 ########################################################################################
 ## ############################## "10-NN"
 ######################################################################################
-m37 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino1[[i]], k = 10)
-t37 <- predict(m37, mat_teste1[[i]], type = "response")
-rmse37[i,j] <- RMSE(t37,mat_teste1[[i]][31])
-rae37[i,j] <- rae(t37,mat_teste1[[i]][31])
-mae37[i,j] <- mae(t37,mat_teste1[[i]][31])
-rrse37[i,j] <- rrse(t37,mat_teste1[[i]][31])
-m38 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino2[[i]], k = 10)
-t38 <- predict(m38, mat_teste2[[i]], type = "response")
-rmse38[i,j] <- RMSE(t38,mat_teste2[[i]][31])
-rae38[i,j] <- rae(t38,mat_teste2[[i]][31])
-mae38[i,j] <- mae(t38,mat_teste2[[i]][31])
-rrse38[i,j] <- rrse(t38,mat_teste2[[i]][31])
-m39 = knnreg(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino3[[i]], k = 10)
-t39 <- predict(m39, mat_teste3[[i]], type = "response")
-rmse39[i,j] <- RMSE(t39,mat_teste3[[i]][31])
-rae39[i,j] <- rae(t39,mat_teste3[[i]][31])
-mae39[i,j] <- mae(t39,mat_teste3[[i]][31])
-rrse39[i,j] <- rrse(t39,mat_teste3[[i]][31])
+m37 = knnreg(mat_treino1[[i]][-31], mat_treino1[[i]]$Class, k = 10)
+t37 <- predict(m37, mat_teste1[[i]][-31])
+t37 <- ifelse(t37 > 0.5, 1, 0)
+cp37[i,j] <- correct_prediction(table(t37,mat_teste1[[i]]$Class))
+
+m38 = knnreg(mat_treino2[[i]][-31], mat_treino2[[i]]$Class, k = 10)
+t38 <- predict(m38, mat_teste2[[i]][-31])
+t38 <- ifelse(t38 > 0.5, 1, 0)
+cp38[i,j] <- correct_prediction(table(t38,mat_teste2[[i]]$Class))
+
+m39 = knnreg(mat_treino3[[i]][-31], mat_treino3[[i]]$Class, k = 10)
+t39 <- predict(m39, mat_teste3[[i]][-31])
+t39 <- ifelse(t39 > 0.5, 1, 0)
+cp39[i,j] <- correct_prediction(table(t39,mat_teste3[[i]]$Class))
 
 #######################################
 ##      VARIAVEIS SIMETRICAS         ##
-#######################################
-m40 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], k = 10)
-t40 <- predict(m40, mat_teste4[[i]], type = "response")
-rmse40[i,j] <- RMSE(t40,mat_teste4[[i]][1])
-rae40[i,j] <- rae(t40,mat_teste4[[i]][1])
-mae40[i,j] <- mae(t40,mat_teste4[[i]][1])
-rrse40[i,j] <- rrse(t40,mat_teste4[[i]][1])
-m41 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], k = 10)
-t41 <- predict(m41, mat_teste5[[i]], type = "response")
-rmse41[i,j] <- RMSE(t41,mat_teste5[[i]][1])
-rae41[i,j] <- rae(t41,mat_teste5[[i]][1])
-mae41[i,j] <- mae(t41,mat_teste5[[i]][1])
-rrse41[i,j] <- rrse(t41,mat_teste5[[i]][1])
-m42 = knnreg(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], k = 10)
-t42 <- predict(m42, mat_teste6[[i]], type = "response")
-rmse42[i,j] <- RMSE(t42,mat_teste6[[i]][1])
-rae42[i,j] <- rae(t42,mat_teste6[[i]][1])
-mae42[i,j] <- mae(t42,mat_teste6[[i]][1])
-rrse42[i,j] <- rrse(t42,mat_teste6[[i]][1])
+######################################
+m40 = knnreg(mat_treino4[[i]][-1], mat_treino4[[i]]$Class, k = 10)
+t40 <- predict(m40, mat_teste4[[i]][-1])
+t40 <- ifelse(t40 > 0.5, 1, 0)
+cp40[i,j] <- correct_prediction(table(t40,mat_teste4[[i]]$Class))
+
+m41 = knnreg(mat_treino5[[i]][-1], mat_treino5[[i]]$Class, k = 10)
+t41 <- predict(m41, mat_teste5[[i]][-1])
+t41 <- ifelse(t41 > 0.5, 1, 0)
+cp41[i,j] <- correct_prediction(table(t41,mat_teste2[[i]]$Class))
+
+m42 = knnreg(mat_treino6[[i]][-1], mat_treino6[[i]]$Class, k = 10)
+t42 <- predict(m42, mat_teste6[[i]][-1])
+t42 <- ifelse(t42 > 0.5, 1, 0)
+cp42[i,j] <- correct_prediction(table(t42,mat_teste6[[i]]$Class))
 
 ########################################################################################
 ## ############################## # Regressão Ridge
 #######################################################################################
-m43 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino1[[i]], alpha = 0) # Regressão Ridge
-t43 <- predict(m43, mat_teste1[[i]], type = "response")
-rmse43[i,j] <- RMSE(t43,mat_teste1[[i]][31])
-rae43[i,j] <- rae(t43,mat_teste1[[i]][31])
-mae43[i,j] <- mae(t43,mat_teste1[[i]][31])
-rrse43[i,j] <- rrse(t43,mat_teste1[[i]][31])
-m44 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino2[[i]], alpha = 0) # Regressão Ridge
-t44 <- predict(m44, mat_teste2[[i]], type = "response")
-rmse44[i,j] <- RMSE(t44,mat_teste2[[i]][31])
-rae44[i,j] <- rae(t44,mat_teste2[[i]][31])
-mae44[i,j] <- mae(t44,mat_teste2[[i]][31])
-rrse44[i,j] <- rrse(t44,mat_teste2[[i]][31])
-m45 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino3[[i]], alpha = 0) # Regressão Ridge
-t45 <- predict(m45, mat_teste3[[i]], type = "response")
-rmse45[i,j] <- RMSE(t45,mat_teste3[[i]][31])
-rae45[i,j] <- rae(t45,mat_teste3[[i]][31])
-mae45[i,j] <- mae(t45,mat_teste3[[i]][31])
-rrse45[i,j] <- rrse(t45,mat_teste3[[i]][31])
+m43 = glmnet(as.matrix(mat_treino1[[i]][-31]), mat_treino1[[i]]$Class, alpha = 0) # Regressão Ridge
+lambda.ridge1 <- cv.glmnet(as.matrix(mat_treino1[[i]][-31]), mat_treino1[[i]]$Class, alpha = 0) # Melhor lambda para a regressão ridge
+t43 <- predict(m43, as.matrix(mat_teste1[[i]][-31]), s = lambda.ridge1$lambda.min)
+t43 <- ifelse(t43 > 0.5, 1, 0)
+cp43[i,j] <- correct_prediction(table(t43,mat_teste1[[i]]$Class))
 
-## Melhor lambda a regressão ridge
-lambda.ridge1 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                            V28 + Amount, data = mat_treino1[[i]], alpha = 0) # Melhor lambda para a regressão ridge
-lambda.ridge2 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                            V28 + Amount, data = mat_treino2[[i]], alpha = 0) # Melhor lambda para a regressão ridge
-lambda.ridge3 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                            V28 + Amount, data = mat_treino3[[i]], alpha = 0) # Melhor lambda para a regressão ridge
+m44 = glmnet(as.matrix(mat_treino2[[i]][-31]), mat_treino2[[i]]$Class, alpha = 0) # Regressão Ridge
+lambda.ridge2 <- cv.glmnet(as.matrix(mat_treino2[[i]][-31]), mat_treino2[[i]]$Class, alpha = 0) # Melhor lambda para a regressão ridge
+t44 <- predict(m44, as.matrix(mat_teste2[[i]][-31]), s = lambda.ridge2$lambda.min)
+t44 <- ifelse(t44 > 0.5, 1, 0)
+cp44[i,j] <- correct_prediction(table(t44,mat_teste2[[i]]$Class))
+
+
+m45 = glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 0) # Regressão Ridge
+lambda.ridge3 <- cv.glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 0) # Melhor lambda para a regressão ridge
+t45 <- predict(m45, as.matrix(mat_teste3[[i]][-31]), s = lambda.ridge3$lambda.min)
+t45 <- ifelse(t45 > 0.5, 1, 0)
+cp45[i,j] <- correct_prediction(table(t45,mat_teste3[[i]]$Class))
+
 ####################################
 ##      VARIAVEIS SIMETRICAS      ##
 ####################################
-m46 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], alpha = 0) # Regressão Ridge
-t46 <- predict(m46, mat_teste4[[i]], type = "response")
-rmse46[i,j] <- RMSE(t46,mat_teste4[[i]][1])
-rae46[i,j] <- rae(t46,mat_teste4[[i]][1])
-mae46[i,j] <- mae(t46,mat_teste4[[i]][1])
-rrse46[i,j] <- rrse(t46,mat_teste4[[i]][1])
-m47 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], alpha = 0) # Regressão Ridge
-t47 <- predict(m47, mat_teste5[[i]], type = "response")
-rmse47[i,j] <- RMSE(t47,mat_teste5[[i]][1])
-rae47[i,j] <- rae(t47,mat_teste5[[i]][1])
-mae47[i,j] <- mae(t47,mat_teste5[[i]][1])
-rrse47[i,j] <- rrse(t47,mat_teste5[[i]][1])
-m48 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], alpha = 0) # Regressão Ridge
-t48 <- predict(m48, mat_teste6[[i]], type = "response")
-rmse48[i,j] <- RMSE(t48,mat_teste6[[i]][1])
-rae48[i,j] <- rae(t48,mat_teste6[[i]][1])
-mae48[i,j] <- mae(t48,mat_teste6[[i]][1])
-rrse48[i,j] <- rrse(t48,mat_teste6[[i]][1])
+m46 = glmnet(as.matrix(mat_treino4[[i]][-1]), mat_treino4[[i]]$Class, alpha = 0) # Regressão Ridge
+lambda.ridge4 <- cv.glmnet(as.matrix(mat_treino4[[i]][-1]), mat_treino4[[i]]$Class, alpha = 0) # Melhor lambda para a regressão ridge
+t46 <- predict(m46, as.matrix(mat_teste4[[i]][-1]), s = lambda.ridge4$lambda.min)
+t46 <- ifelse(t46 > 0.5, 1, 0)
+cp46[i,j] <- correct_prediction(table(t46,mat_teste4[[i]]$Class))
 
+m47 = glmnet(as.matrix(mat_treino5[[i]][-1]), mat_treino5[[i]]$Class, alpha = 0) # Regressão Ridge
+lambda.ridge5 <- cv.glmnet(as.matrix(mat_treino5[[i]][-1]), mat_treino5[[i]]$Class, alpha = 0) # Melhor lambda para a regressão ridge
+t47 <- predict(m47, as.matrix(mat_teste5[[i]][-1]), s = lambda.ridge5$lambda.min)
+t47 <- ifelse(t47 > 0.5, 1, 0)
+cp47[i,j] <- correct_prediction(table(t47,mat_teste5[[i]]$Class))
 
-## Melhor lambda a regressão ridge
-lambda.ridge11 = cv.glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], alpha = 0) # Melhor lambda para a regressão ridge
-lambda.ridge22 = cv.glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], alpha = 0) # Melhor lambda para a regressão ridge
-lambda.ridge33 = cv.glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], alpha = 0) # Melhor lambda para a regressão ridge
-
+m48 = glmnet(as.matrix(mat_treino6[[i]][-1]), mat_treino6[[i]]$Class, alpha = 0) # Regressão Ridge
+lambda.ridge6 <- cv.glmnet(as.matrix(mat_treino6[[i]][-1]), mat_treino6[[i]]$Class, alpha = 0) # Melhor lambda para a regressão ridge
+t48 <- predict(m48, as.matrix(mat_teste6[[i]][-1]), s = lambda.ridge6$lambda.min)
+t48 <- ifelse(t48 > 0.5, 1, 0)
+cp48[i,j] <- correct_prediction(table(t48,mat_teste6[[i]]$Class))
 
 ########################################################################################
 ## ############################## # LASSO
 #######################################################################################
-m49 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino1[[i]], alpha = 1) # LASSO
-t49 <- predict(m49, mat_teste1[[i]], type = "response")
-rmse49[i,j] <- RMSE(t49,mat_teste1[[i]][31])
-rae49[i,j] <- rae(t49,mat_teste1[[i]][31])
-mae49[i,j] <- mae(t49,mat_teste1[[i]][31])
-rrse49[i,j] <- rrse(t49,mat_teste1[[i]][31])
-m50 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino2[[i]], alpha = 1) # LASSO
-t50 <- predict(m50, mat_teste2[[i]], type = "response")
-rmse50[i,j] <- RMSE(t50,mat_teste2[[i]][31])
-rae50[i,j] <- rae(t50,mat_teste2[[i]][31])
-mae50[i,j] <- mae(t50,mat_teste2[[i]][31])
-rrse50[i,j] <- rrse(t50,mat_teste2[[i]][31])
-m51 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-               V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-               V28 + Amount, data = mat_treino3[[i]], alpha = 1) # LASSO
-t51 <- predict(m51, mat_teste3[[i]], type = "response")
-rmse51[i,j] <- RMSE(t51,mat_teste3[[i]][31])
-rae51[i,j] <- rae(t51,mat_teste3[[i]][31])
-mae51[i,j] <- mae(t51,mat_teste3[[i]][31])
-rrse51[i,j] <- rrse(t51,mat_teste3[[i]][31])
+m49 = glmnet(as.matrix(mat_treino1[[i]][-31]), mat_treino1[[i]]$Class, alpha = 1) # Regressão Ridge
+lambda.lasso1 <- cv.glmnet(as.matrix(mat_treino1[[i]][-31]), mat_treino1[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+t49 <- predict(m49, as.matrix(mat_teste1[[i]][-31]), s = lambda.lasso1$lambda.min)
+t49 <- ifelse(t49 > 0.5, 1, 0)
+cp49[i,j] <- correct_prediction(table(t49,mat_teste1[[i]]$Class))
 
-# Melhor lambda para o LASSO
-lambda.lasso1 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                            V28 + Amount, data = mat_treino1[[i]], alpha = 1) # Melhor lambda para o LASSO
-lambda.lasso2 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                            V28 + Amount, data = mat_treino2[[i]], alpha = 1) # Melhor lambda para o LASSO
-lambda.lasso3 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V11 + V12 + V13 + 
-                            V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
-                            V28 + Amount, data = mat_treino3[[i]], alpha = 1) # Melhor lambda para o LASSO
-#######################################
-##      VARIAVEIS SIMETRICAS         ##
-#######################################
-m52 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], alpha = 1) # LASSO
-t52 <- predict(m52, mat_teste4[[i]], type = "response")
-rmse52[i,j] <- RMSE(t52,mat_teste4[[i]][1])
-rae52[i,j] <- rae(t52,mat_teste4[[i]][1])
-mae52[i,j] <- mae(t52,mat_teste4[[i]][1])
-rrse52[i,j] <- rrse(t52,mat_teste4[[i]][1])
-m53 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], alpha = 1) # LASSO
-t53 <- predict(m53, mat_teste5[[i]], type = "response")
-rmse53[i,j] <- RMSE(t53,mat_teste5[[i]][1])
-rae53[i,j] <- rae(t53,mat_teste5[[i]][1])
-mae53[i,j] <- mae(t53,mat_teste5[[i]][1])
-rrse53[i,j] <- rrse(t53,mat_teste5[[i]][1])
-m54 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], alpha = 1) # LASSO
-t54 <- predict(m54, mat_teste6[[i]], type = "response")
-rmse54[i,j] <- RMSE(t54,mat_teste6[[i]][1])
-rae54[i,j] <- rae(t54,mat_teste6[[i]][1])
-mae54[i,j] <- mae(t54,mat_teste6[[i]][1])
-rrse54[i,j] <- rrse(t54,mat_teste6[[i]][1])
+m50 = glmnet(as.matrix(mat_treino2[[i]][-31]), mat_treino2[[i]]$Class, alpha = 1) # Regressão Ridge
+lambda.lasso2 <- cv.glmnet(as.matrix(mat_treino2[[i]][-31]), mat_treino2[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+t50 <- predict(m50, as.matrix(mat_teste2[[i]][-31]), s = lambda.lasso2$lambda.min)
+t50 <- ifelse(t50 > 0.5, 1, 0)
+cp50[i,j] <- correct_prediction(table(t50,mat_teste2[[i]]$Class))
 
-# Melhor lambda para o LASSO
-lambda.lasso11 = cv.glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], alpha = 1) # Melhor lambda para o LASSO
-lambda.lasso22 = cv.glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], alpha = 1) # Melhor lambda para o LASSO
-lambda.lasso33 = cv.glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], alpha = 1) # Melhor lambda para o LASSO
 
+m51 = glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 1) # Regressão Ridge
+lambda.ridge3 <- cv.glmnet(as.matrix(mat_treino3[[i]][-31]), mat_treino3[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+t51 <- predict(m51, as.matrix(mat_teste3[[i]][-31]), s = lambda.lasso3$lambda.min)
+t51 <- ifelse(t51 > 0.5, 1, 0)
+cp51[i,j] <- correct_prediction(table(t51,mat_teste3[[i]]$Class))
+
+####################################
+##      VARIAVEIS SIMETRICAS      ##
+####################################
+m52 = glmnet(as.matrix(mat_treino4[[i]][-1]), mat_treino4[[i]]$Class, alpha = 1) # Regressão Ridge
+lambda.lasso4 <- cv.glmnet(as.matrix(mat_treino4[[i]][-1]), mat_treino4[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+t52 <- predict(m52, as.matrix(mat_teste4[[i]][-1]), s = lambda.lasso4$lambda.min)
+t52 <- ifelse(t52 > 0.5, 1, 0)
+cp52[i,j] <- correct_prediction(table(t52,mat_teste4[[i]]$Class))
+
+m53 = glmnet(as.matrix(mat_treino5[[i]][-1]), mat_treino5[[i]]$Class, alpha = 1) # Regressão Ridge
+lambda.lasso5 <- cv.glmnet(as.matrix(mat_treino5[[i]][-1]), mat_treino5[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+t53 <- predict(m53, as.matrix(mat_teste5[[i]][-1]), s = lambda.lasso5$lambda.min)
+t53 <- ifelse(t53 > 0.5, 1, 0)
+cp53[i,j] <- correct_prediction(table(t53,mat_teste5[[i]]$Class))
+
+m54 = glmnet(as.matrix(mat_treino6[[i]][-1]), mat_treino6[[i]]$Class, alpha = 1) # Regressão Ridge
+lambda.lasso6 <- cv.glmnet(as.matrix(mat_treino6[[i]][-1]), mat_treino6[[i]]$Class, alpha = 1) # Melhor lambda para a regressão ridge
+t54 <- predict(m54, as.matrix(mat_teste6[[i]][-1]), s = lambda.lasso6$lambda.min)
+t54 <- ifelse(t54 > 0.5, 1, 0)
+cp54[i,j] <- correct_prediction(table(t54,mat_teste6[[i]]$Class))
 
 ########################################################################################
 ## ############################## # ElasticNet
@@ -807,7 +720,7 @@ m55 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V
                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                V28 + Amount, data = mat_treino1[[i]], alpha = 0.5) # ElasticNet
 t55 <- predict(m55, mat_teste1[[i]], type = "response")
-rmse55[i,j] <- RMSE(t55,mat_teste1[[i]][31])
+cp55[i,j] <- cp(t55,mat_teste1[[i]][31])
 rae55[i,j] <- rae(t55,mat_teste1[[i]][31])
 mae55[i,j] <- mae(t55,mat_teste1[[i]][31])
 rrse55[i,j] <- rrse(t55,mat_teste1[[i]][31])
@@ -815,7 +728,7 @@ m56 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V
                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                V28 + Amount, data = mat_treino2[[i]], alpha = 0.5) # ElasticNet
 t56 <- predict(m56, mat_teste2[[i]], type = "response")
-rmse56[i,j] <- RMSE(t56,mat_teste2[[i]][31])
+cp56[i,j] <- cp(t56,mat_teste2[[i]][31])
 rae56[i,j] <- rae(t56,mat_teste2[[i]][31])
 mae56[i,j] <- mae(t56,mat_teste2[[i]][31])
 rrse56[i,j] <- rrse(t56,mat_teste2[[i]][31])
@@ -823,7 +736,7 @@ m57 = glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + V
                V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                V28 + Amount, data = mat_treino3[[i]], alpha = 0.5) # ElasticNet
 t57 <- predict(m57, mat_teste3[[i]], type = "response")
-rmse57[i,j] <- RMSE(t57,mat_teste3[[i]][31])
+cp57[i,j] <- cp(t57,mat_teste3[[i]][31])
 rae57[i,j] <- rae(t57,mat_teste3[[i]][31])
 mae57[i,j] <- mae(t57,mat_teste3[[i]][31])
 rrse57[i,j] <- rrse(t57,mat_teste3[[i]][31])
@@ -843,19 +756,19 @@ lambda.elasticnet3 = cv.glmnet(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 +
 #######################################
 m58 = glmnet(bClass ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino4[[i]], alpha = 0.5) # ElasticNet
 t58 <- predict(m58, mat_teste4[[i]], type = "response")
-rmse58[i,j] <- RMSE(t58,mat_teste4[[i]][1])
+cp58[i,j] <- cp(t58,mat_teste4[[i]][1])
 rae58[i,j] <- rae(t58,mat_teste4[[i]][1])
 mae58[i,j] <- mae(t58,mat_teste4[[i]][1])
 rrse58[i,j] <- rrse(t58,mat_teste4[[i]][1])
 m59 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino5[[i]], alpha = 0.5) # ElasticNet
 t59 <- predict(m59, mat_teste5[[i]], type = "response")
-rmse59[i,j] <- RMSE(t59,mat_teste5[[i]][1])
+cp59[i,j] <- cp(t59,mat_teste5[[i]][1])
 rae59[i,j] <- rae(t59,mat_teste5[[i]][1])
 mae59[i,j] <- mae(t59,mat_teste5[[i]][1])
 rrse59[i,j] <- rrse(t59,mat_teste5[[i]][1])
 m60 = glmnet(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24,data = mat_treino6[[i]], alpha = 0.5) # ElasticNet
 t60 <- predict(m60, mat_teste6[[i]], type = "response")
-rmse60[i,j] <- RMSE(t60,mat_teste6[[i]][1])
+cp60[i,j] <- cp(t60,mat_teste6[[i]][1])
 rae60[i,j] <- rae(t60,mat_teste6[[i]][1])
 mae60[i,j] <- mae(t60,mat_teste6[[i]][1])
 rrse60[i,j] <- rrse(t60,mat_teste6[[i]][1])
@@ -873,7 +786,7 @@ m61 <- rpart( Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount, data = mat_treino1[[i]],method="class")
 t61 <- predict(m61, mat_teste1[[i]], type = "response")
-rmse61[i,j] <- RMSE(t61,mat_teste1[[i]][31])
+cp61[i,j] <- cp(t61,mat_teste1[[i]][31])
 rae61[i,j] <- rae(t61,mat_teste1[[i]][31])
 mae61[i,j] <- mae(t61,mat_teste1[[i]][31])
 rrse61[i,j] <- rrse(t61,mat_teste1[[i]][31])
@@ -881,7 +794,7 @@ m62 <- rpart( Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount, data = mat_treino2[[i]],method="class")
 t62 <- predict(m62, mat_teste2[[i]], type = "response")
-rmse62[i,j] <- RMSE(t62,mat_teste2[[i]][31])
+cp62[i,j] <- cp(t62,mat_teste2[[i]][31])
 rae62[i,j] <- rae(t62,mat_teste2[[i]][31])
 mae62[i,j] <- mae(t62,mat_teste2[[i]][31])
 rrse62[i,j] <- rrse(t62,mat_teste2[[i]][31])
@@ -889,7 +802,7 @@ m63 <- rpart( Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + V10 + 
                 V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                 V28 + Amount, data = mat_treino3[[i]],method="class")
 t63 <- predict(m63, mat_teste3[[i]], type = "response")
-rmse63[i,j] <- RMSE(t63,mat_teste3[[i]][31])
+cp63[i,j] <- cp(t63,mat_teste3[[i]][31])
 rae63[i,j] <- rae(t63,mat_teste3[[i]][31])
 mae63[i,j] <- mae(t63,mat_teste3[[i]][31])
 rrse63[i,j] <- rrse(t63,mat_teste3[[i]][31])
@@ -899,19 +812,19 @@ rrse63[i,j] <- rrse(t63,mat_teste3[[i]][31])
 #######################################
 m64 <- rpart(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_treino4[[i]],method="class")
 t64 <- predict(m64, mat_teste4[[i]], type = "response")
-rmse64[i,j] <- RMSE(t64,mat_teste4[[i]][1])
+cp64[i,j] <- cp(t64,mat_teste4[[i]][1])
 rae64[i,j] <- rae(t64,mat_teste4[[i]][1])
 mae64[i,j] <- mae(t64,mat_teste4[[i]][1])
 rrse64[i,j] <- rrse(t64,mat_teste4[[i]][1])
 m65 <- rpart(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_treino5[[i]],method="class")
 t65 <- predict(m65, mat_teste5[[i]], type = "response")
-rmse65[i,j] <- RMSE(t65,mat_teste5[[i]][1])
+cp65[i,j] <- cp(t65,mat_teste5[[i]][1])
 rae65[i,j] <- rae(t65,mat_teste5[[i]][1])
 mae65[i,j] <- mae(t65,mat_teste5[[i]][1])
 rrse65[i,j] <- rrse(t65,mat_teste5[[i]][1])
 m66 <- rpart(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_treino6[[i]],method="class")
 t66 <- predict(m66, mat_teste6[[i]], type = "response")
-rmse66[i,j] <- RMSE(t66,mat_teste6[[i]][1])
+cp66[i,j] <- cp(t66,mat_teste6[[i]][1])
 rae66[i,j] <- rae(t66,mat_teste6[[i]][1])
 mae66[i,j] <- mae(t66,mat_teste6[[i]][1])
 rrse66[i,j] <- rrse(t66,mat_teste6[[i]][1])
@@ -923,7 +836,7 @@ m67 <- randomForest(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + 
                        V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                        V28 + Amount, data = mat_treino1[[i]], ntree = 500)
 t67 <- predict(m67, mat_teste1[[i]], type = "response")
-rmse67[i,j] <- RMSE(t67,mat_teste1[[i]][31])
+cp67[i,j] <- cp(t67,mat_teste1[[i]][31])
 rae67[i,j] <- rae(t67,mat_teste1[[i]][31])
 mae67[i,j] <- mae(t67,mat_teste1[[i]][31])
 rrse67[i,j] <- rrse(t67,mat_teste1[[i]][31])
@@ -931,7 +844,7 @@ m68 <- randomForest(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + 
                        V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                        V28 + Amount, data = mat_treino2[[i]], ntree = 500)
 t68 <- predict(m68, mat_teste2[[i]], type = "response")
-rmse68[i,j] <- RMSE(t68,mat_teste2[[i]][31])
+cp68[i,j] <- cp(t68,mat_teste2[[i]][31])
 rae68[i,j] <- rae(t68,mat_teste2[[i]][31])
 mae68[i,j] <- mae(t68,mat_teste2[[i]][31])
 rrse68[i,j] <- rrse(t68,mat_teste2[[i]][31])
@@ -939,7 +852,7 @@ m69 <- randomForest(Class ~ Time + V1 + V2 + V3 + V4 + V5 + V6 + V7 + V8 + V9 + 
                        V14 + V15 + V16 + V17 + V18 + V19 + V20 + V21 + V22 + V23 + V24 + V25 + V26 + V27 + 
                        V28 + Amount, data = mat_treino3[[i]], ntree = 500)
 t69 <- predict(m69, mat_teste3[[i]], type = "response")
-rmse69[i,j] <- RMSE(t69,mat_teste3[[i]][31])
+cp69[i,j] <- cp(t69,mat_teste3[[i]][31])
 rae69[i,j] <- rae(t69,mat_teste3[[i]][31])
 mae69[i,j] <- mae(t69,mat_teste3[[i]][31])
 rrse69[i,j] <- rrse(t69,mat_teste3[[i]][31])
@@ -949,22 +862,20 @@ rrse69[i,j] <- rrse(t69,mat_teste3[[i]][31])
 #######################################
 m70 <- randomForest(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_treino4[[i]], ntree = 500)
 t70 <- predict(m70, mat_teste4[[i]], type = "response")
-rmse70[i,j] <- RMSE(t70,mat_teste4[[i]][1])
+cp70[i,j] <- cp(t70,mat_teste4[[i]][1])
 rae70[i,j] <- rae(t70,mat_teste4[[i]][1])
 mae70[i,j] <- mae(t70,mat_teste4[[i]][1])
 rrse70[i,j] <- rrse(t70,mat_teste4[[i]][1])
 m71 <- randomForest(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_treino5[[i]], ntree = 500)
 t71 <- predict(m71, mat_teste5[[i]], type = "response")
-rmse71[i,j] <- RMSE(t71,mat_teste5[[i]][1])
+cp71[i,j] <- cp(t71,mat_teste5[[i]][1])
 rae71[i,j] <- rae(t71,mat_teste5[[i]][1])
 mae71[i,j] <- mae(t71,mat_teste5[[i]][1])
 rrse71[i,j] <- rrse(t71,mat_teste5[[i]][1])
 m72 <- randomForest(Class ~ V4 + V9 + V11 + V13 + V15 + V19 + V24, data = mat_treino6[[i]], ntree = 500)
 t72 <- predict(m72, mat_teste6[[i]], type = "response")
-rmse72[i,j] <- RMSE(t72,mat_teste6[[i]][1])
-rae72[i,j] <- rae(t72,mat_teste6[[i]][1])
-mae72[i,j] <- mae(t72,mat_teste6[[i]][1])
-rrse72[i,j] <- rrse(t72,mat_teste6[[i]][1])
+cp72[i,j] <- cp(t72,mat_teste6[[i]][1])
+
 }
 }
 # Para prever todos esses valores é usar o predict.
