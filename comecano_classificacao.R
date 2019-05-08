@@ -1154,7 +1154,11 @@ boxplot(A10, A11, A12, main = "Desempenho do modelo de classificação Analise d
 
 boxplot(A13, A14, A15, main = "Desempenho do modelo de classificação KNN-5", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O quinto modelo de classificação sendo KNN-5(5 vizinhos próximos) teve de uma varianção
+# de aproximadamente 60% a 92% de predição correta, podendo obervar pelo boxplot que até o
+# momento foi o modelo com o pior desempenho tendo uma variação alta nos três cenários e novamente
+# mesmo muito ruim o resultado ainda sim o melhorzinho se encontra no terceiro cenário e maior média,
+# mesmo sendo a mior média nesse modelo, mas ainda nem cheando a acertar 90% das predições.  
 
 boxplot(A16, A17, A18, main = "Desempenho do modelo de classificação KNN-3", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
