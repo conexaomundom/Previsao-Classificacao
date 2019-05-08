@@ -1123,9 +1123,10 @@ A36 <- c(cp69,cp72)
 par(mfrow = c(1,1))
 boxplot(A1, A2, A3, main = "Desempenho do modelo de classificação Regressão Logistica", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O primeiro modelo de classificação sendo de regressão logistica teve de uma varianção de aproximadamente
-# 86% a 96% de predição correta podendo obervar pelo boxplot que o melhor desempenho da 
-# regressão logistica foi incontavelmente no terceiro cenário.
+# O primeiro modelo de classificação sendo de regressão logistica, observando nos cenários
+# do banco e observando junto o desempenho com todas as variáveis e com as veriáveis simétricas
+# teve de uma varianção de aproximadamente 86% a 96% de predição correta podendo obervar pelo 
+# boxplot que o melhor desempenho da regressão logistica foi incontavelmente no terceiro cenário.
 
 boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
@@ -1136,11 +1137,15 @@ boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit",
 # do MLG com distribuição binomial e função de ligação probit foi incontavelmente no terceiro cenário,
 # sem ocorrer de ter outliers.
 
-boxplot(A7, A8, A9, main = "Desempenho do modelo de classificação Analise de discriminante Linear", 
-        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
 
-boxplot(A10, A11, A12, main = "Desempenho do modelo de classificação Analise de discriminante Quadrático", 
+boxplot(A7, A8, A9, main = "Desempenho do modelo de classificação Analise de Discriminante Linear", 
+        ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
+# O segundo modelo de classificação sendo probit teve de uma varianção de aproximadamente
+# 86% a 96%, porém com alguns outliers chegando a ser com 65% de predição correta, no primeiro e 
+# segundo cenário podendo obervar pelo boxplot que a variação no desempenho do modelo foi maior
+#  e que o melhor desempenho Analise de Discriminante Linear foi no terceiro cenário.
+
+boxplot(A10, A11, A12, main = "Desempenho do modelo de classificação Analise de Discriminante Quadrático", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # 
 
