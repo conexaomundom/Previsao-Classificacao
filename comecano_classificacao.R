@@ -1188,7 +1188,12 @@ boxplot(A22, A23, A24, main = "Desempenho do modelo de classificação Regressã
 
 boxplot(A25, A26, A27, main = "Desempenho do modelo de classificação Lasso", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# 
+# O oitavo modelo de classificação sendo Lasso teve uma varianção de aproximadamente 86% a 
+# 95% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
+# no melhor desempenho desse modelo, porém um modelo que mesmo acertando muito bem uma vez ou outra 
+# mas na maioria das vezes errando não é tão bom quanto um que acerta com uma porcentagem boa (não muito, mas boa)
+# mas variando menos é considerado em certa ocasião como essa sendo com melhor desempenho se encontra no terceiro cenário 
+# que tem a média perto de 90% de predição correta também, com desempenho muito parecido com o de regressão Ridge.
 
 boxplot(A28, A29, A30, main = "Desempenho do modelo de classificação Elasticnet", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
