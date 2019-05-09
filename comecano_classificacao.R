@@ -150,7 +150,7 @@ for(i in 1:k){
 ## São 387 que em Class assume 1.   # São 227459 que em Class assume 0.
 vec <- which(Class == 1);          posicoes <- which(Class == 0)
 # Pegando uma quantidade de 1's porque o banco é muito desbalanceado, mas estamos balanceando 
-# length(posicoes)/length(vec) = 587.7494. tem 587.7494 cerca de 99,8% de 0's
+# length(posicoes)/length(vec) = 587.7494. tem 587.7494 cerca de 99,8\% de 0's
 # em Class.
 # Balanceado.
 vec1 <- sample(x = posicoes, size = length(vec))
@@ -963,17 +963,17 @@ mean(cp70),
 mean(cp71),
 mean(cp72))
 boxplot(a,b,c,d,e,f,g,h,i,j,k, main = "Desempenho em média dos modelo de classificação", 
-        ylab = "Predição correta", xlab = "modelo de classificação avaliados")
+        ylab = "Predição correta", xlab = "Modelos de classificação Logit, Probit, ADL, ADQ, Reg Ridge, Lasso, Elastic, Classificação Trees")
 
 # Observando o boxplot é possivel ver o modelo de classificação que tem menor variação sendo nos
 # tres cenários os modelo de classificação com melhor desempenho foi mlg com distibuiçao binomial
 # com funçao de ligação logit e probit e o modelo de classificação Classificação Trees, que teve a 
 # menor varição e em media tem o melhor desempenho. Os modelo de classificação com desempenhos ruins 
 # foram os knn com k = 5, 3 e 10, pois a variáçaõ foi alta, tendo classificação
-# que tem pedição correta chgeando a 90%, mas em média fica em torno dos 83%, porém
-# também chega a ter um nívell de predição correta de 65% apenas, demonstrando
+# que tem pedição correta chgeando a 90\%, mas em média fica em torno dos 83\%, porém
+# também chega a ter um nívell de predição correta de 65\% apenas, demonstrando
 # não ser muito centrado. Porém o pior modelo de classificação de classificação ainda foi o random forest
-# tendo o chegando no máximo a 75% de predição correta.
+# tendo o chegando no máximo a 75\% de predição correta.
 
 ####################################################################
 ## Olhando e comparando as variáveis as variáveis simetricas
@@ -1053,30 +1053,30 @@ l2 <- c(mean(cp70),
 x11()
 par(mfrow = c(2,1))
 boxplot(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de classificação utilizando todas as variáveis", 
-        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridge, Lasso, Elastic, Classificação Trees")
+        ylab = "Predição correta", xlab = "Modelos de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Reg Ridge, Lasso, Elastic, Classificação Trees")
 boxplot(a1,b1,c1,d1,h1,i1,j1,k1, main = "Desempenho em média dos modelo de classificação utilizando todas as variáveis", 
-         ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, Reg Ridge, Lasso, Elastic, Classificação Trees")
+         ylab = "Predição correta", xlab = "Modelos de classificação Logit, Probit, ADL, ADQ, Reg Ridge, Lasso, Elastic, Classificação Trees")
 # Com todos os métodos e retirando os KNN's é possivel visualizar o desempenho dos melhores modelo de classificação
-# tendo um desempenho de 91% a 95%, em que os modelo de classificação probit e logit tendo mais outlier encontrando
+# tendo um desempenho de 91\% a 95\%, em que os modelo de classificação probit e logit tendo mais outlier encontrando
 # a explicação de ter dado como o melhor método, porem em geral não é isso que ocorree, poorque esse
 # outlier como é alto e nós procuramos a média alta, sem observar um gráfico não expressa bem a realidade
 # do desempenho dos métodos os melhores que tiveram menor variação Analise de Discriminante Linear 
 # e quadrático.
 par(mfrow = c(1,1))
 boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Classificação Trees")
+        ylab = "Predição correta", xlab = "Modelos de classificação Logit, Probit, ADL, ADQ, KNN5, KNN3, KNN10, Classificação Trees")
 par(mfrow = c(2,1))
 boxplot(a2,b2,d2,e2,f2,g2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "modelo de classificação Logit, Probit, ADQ, KNN5, KNN3, KNN10, Classificação Trees")
+        ylab = "Predição correta", xlab = "Modelos de classificação Logit, Probit, ADQ, KNN5, KNN3, KNN10, Classificação Trees")
 boxplot(c2,g2,h2,i2,k2, main = "Desempenho em média dos modelo de classificação utilizando as variáveis simétricas", 
-        ylab = "Predição correta", xlab = "modelo de classificação ADL, Reg Ridge, Lasso, Elastic")
+        ylab = "Predição correta", xlab = "Modelos de classificação ADL, Reg Ridge, Lasso, Elastic")
 
 # Utilizando os bancos com as componentes principais  simétricas o desempenho dos modelo de classificação foi bem
-# melhor variando de 88% a 94% de predição correta, incluindo os três modelo de classificação com piores desempenho
+# melhor variando de 88\% a 94\% de predição correta, incluindo os três modelo de classificação com piores desempenho
 # utilizando todas as componentes principais os modelo de classificação de KNN 3, 5 e 10 vizinhos próximos, também
 # estão nesse intervalo de predição correta e os que tiveram pior desempenho foram os modelo de classificação de 
-# analise de discriminante linear, Regressão Ridge, Lasso e Elasticnet variando de 88% a 92%, mesmo
-# tendo a variância em todos, melhores modelo de classificação variaram de 90% a 94%. 
+# analise de discriminante linear, Regressão Ridge, Lasso e Elasticnet variando de 88\% a 92\%, mesmo
+# tendo a variância em todos, melhores modelo de classificação variaram de 90\% a 94\%. 
 
 # O melhor metodo vai ser o que é melhor nessas situações tiver o maior 
 # predição correta.
@@ -1138,13 +1138,13 @@ boxplot(A1, A2, A3, main = "Desempenho do modelo de classificação Regressão L
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O primeiro modelo de classificação sendo de regressão logistica, observando nos cenários
 # do banco e observando junto o desempenho com todas as variáveis e com as veriáveis simétricas
-# teve de uma varianção de aproximadamente 86% a 96% de predição correta podendo obervar pelo 
+# teve de uma varianção de aproximadamente 86\% a 96\% de predição correta podendo obervar pelo 
 # boxplot que o melhor desempenho da regressão logistica foi incontavelmente no terceiro cenário.
 
 boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O segundo modelo de classificação sendo probit teve uma varianção de aproximadamente
-# 86% a 96%, porém com alguns outliers chegando a ser com 65% de predição correta,
+# 86\% a 96\%, porém com alguns outliers chegando a ser com 65\% de predição correta,
 # observando que o modelo pode sté ser bom, mas há situações que ele erra bastante, mas isso 
 # só ocorreu no primeiro e segundo cenário podendo obervar pelo boxplot que o melhor desempenho da 
 # do MLG com distribuição binomial e função de ligação probit foi incontavelmente no terceiro cenário,
@@ -1154,79 +1154,79 @@ boxplot(A4, A5, A6, main = "Desempenho do modelo de classificação probit",
 boxplot(A7, A8, A9, main = "Desempenho do modelo de classificação Analise de Discriminante Linear", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O Terceiro modelo de classificação sendo Analise de Discriminante Linear teve uma varianção 
-# de aproximadamente 85% a 96%, no primeiro e segundo cenário podendo obervar pelo boxplot que a 
+# de aproximadamente 85\% a 96\%, no primeiro e segundo cenário podendo obervar pelo boxplot que a 
 # variação no desempenho do modelo foi maior, e melhor desempenho Analise de Discriminante Linear 
 # foi no terceiro cenário.
 
 boxplot(A10, A11, A12, main = "Desempenho do modelo de classificação Analise de Discriminante Quadrático", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O quarto modelo de classificação sendo Analise de Discriminante Quadrático teve uma varianção
-# de aproximadamente 85% a 95% de predição correta, podendo obervar pelo boxplot que a variação no desempenho do modelo
+# de aproximadamente 85\% a 95\% de predição correta, podendo obervar pelo boxplot que a variação no desempenho do modelo
 # foi maior no primeiro e segundo cenário também, e que o melhor desempenho Analise de Discriminante
 # Quadrático foi no terceiro cenário, com menor varição e maior média. 
 
 boxplot(A13, A14, A15, main = "Desempenho do modelo de classificação KNN-5", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O quinto modelo de classificação sendo KNN-5(5 vizinhos próximos) teve uma varianção
-# de aproximadamente 60% a 92% de predição correta, podendo obervar pelo boxplot que até o
+# de aproximadamente 60\% a 92\% de predição correta, podendo obervar pelo boxplot que até o
 # momento foi o modelo com o pior desempenho tendo uma variação alta nos três cenários e novamente
 # mesmo muito ruim o resultado ainda sim o melhorzinho se encontra no terceiro cenário e maior média,
-# mesmo sendo a mior média nesse modelo, mas ainda nem cheando a acertar 90% das predições.  
+# mesmo sendo a mior média nesse modelo, mas ainda nem cheando a acertar 90\% das predições.  
 
 boxplot(A16, A17, A18, main = "Desempenho do modelo de classificação KNN-3", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # # O quinto modelo de classificação sendo KNN-3(3 vizinhos próximos) teve uma varianção
-# de aproximadamente 60% a 93% de predição correta, podendo obervar pelo boxplot que até o
+# de aproximadamente 60\% a 93\% de predição correta, podendo obervar pelo boxplot que até o
 # momento foi o modelo com o pior desempenho tendo uma variação alta nos três cenários e novamente
 # mesmo muito ruim o resultado ainda sim o melhorzinho se encontra no terceiro cenário e maior média,
-# mesmo sendo a mior média nesse modelo, mas ainda nem cheando a acertar 90% das predições.
+# mesmo sendo a mior média nesse modelo, mas ainda nem cheando a acertar 90\% das predições.
 
 boxplot(A19, A20, A21, main = "Desempenho do modelo de classificação KNN-10", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
 # O sexto modelo de classificação sendo KNN-10(10 vizinhos próximos) teve uma varianção
-# de aproximadamente 60% a 93% de predição correta também, observando dos modelos KNN 
+# de aproximadamente 60\% a 93\% de predição correta também, observando dos modelos KNN 
 # com 10 vizinhos próximos foi o com menor variação, as caixinhas foram um pouco menores,
 # mas tendo uma variação alta nos três cenários e novamente mesmo muito ruim o resultado ainda sim 
 # o melhorzinho se encontra no terceiro cenário e maior média, mesmo sendo a maior média nesse modelo,
-# mas ainda nem cheando a acertar 90% das predições também.
+# mas ainda nem cheando a acertar 90\% das predições também.
 
 boxplot(A22, A23, A24, main = "Desempenho do modelo de classificação Regressão Ridge", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O sétimo modelo de classificação sendo Regressão Ridge teve uma varianção de aproximadamente 84% a 
-# 95% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
+# O sétimo modelo de classificação sendo Regressão Ridge teve uma varianção de aproximadamente 84\% a 
+# 95\% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
 # no melhor desempenho desse modelo, porém um modelo que mesmo acertando muito bem uma vez ou outra 
 # mas na maioria das vezes errando não é tão bom quanto um que acerta com uma porcentagem boa (não muito, mas boa)
 # mas variando menos é considerado em certa ocasião como essa sendo com melhor desempenho se encontra no terceiro cenário 
-# que tem a média perto de 90% de predição correta.
+# que tem a média perto de 90\% de predição correta.
 
 boxplot(A25, A26, A27, main = "Desempenho do modelo de classificação Lasso", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O oitavo modelo de classificação sendo Lasso teve uma varianção de aproximadamente 86% a 
-# 95% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
+# O oitavo modelo de classificação sendo Lasso teve uma varianção de aproximadamente 86\% a 
+# 95\% de predição correta, mas tendo uma variação alta no segundo cenário, mesmo tendo outliers que chegam
 # no melhor desempenho desse modelo, sendo o melhor desempenho no terceiro cenário 
-# que tem a média perto de 90% de predição correta também, com desempenho muito parecido com o de regressão Ridge.
+# que tem a média perto de 90\% de predição correta também, com desempenho muito parecido com o de regressão Ridge.
 
 boxplot(A28, A29, A30, main = "Desempenho do modelo de classificação Elasticnet", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O nono modelo de classificação sendo Elasticnet teve uma varianção de aproximadamente 86% a 
-# 95% de predição correta, muito proximo da regresssão Ridge e Lasso, e também tendo uma variação 
+# O nono modelo de classificação sendo Elasticnet teve uma varianção de aproximadamente 86\% a 
+# 95\% de predição correta, muito proximo da regresssão Ridge e Lasso, e também tendo uma variação 
 # alta no segundo cenário, mesmo tendo outliers que chegam no melhor desempenho desse modelo, sendo 
-# o melhor desempenho no terceiro cenário que tem a média perto de 90% de predição correta também,
+# o melhor desempenho no terceiro cenário que tem a média perto de 90\% de predição correta também,
 # com desempenho muito parecido com Lasso unicamente tendo médias menores, ou seja em média é um modelo de
 # classificaçaõ pior que os demais(Regressão Ridge e Lasso).
 
 boxplot(A31, A32, A33, main = "Desempenho do modelo de classificação Trees", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O décimo modelo de classificação Trees teve uma varianção de aproximadamente 84% a 
-# 96% de predição correta, tendo bem menor variação do que observado nos ultimos modelos visto, sendo 
-# o melhor desempenho no terceiro cenário também que tem a média perto de 94% de predição correta,
+# O décimo modelo de classificação Trees teve uma varianção de aproximadamente 84\% a 
+# 96\% de predição correta, tendo bem menor variação do que observado nos ultimos modelos visto, sendo 
+# o melhor desempenho no terceiro cenário também que tem a média perto de 94\% de predição correta,
 # com desempenho bom.
 boxplot(A34, A35, A36, main = "Desempenho do modelo de classificação Random Forest", 
         ylab = "Predição correta", xlab = "Primeiro, Segundo e Terceiro cenário")
-# O décimo primeiro modelo de classificação Random Forest teve uma varianção de aproximadamente 50% a 
-# 65% de predição correta no primeiro cenário, de aproximadamente 65% a 82% de predição correta no 
+# O décimo primeiro modelo de classificação Random Forest teve uma varianção de aproximadamente 50\% a 
+# 65\% de predição correta no primeiro cenário, de aproximadamente 65\% a 82\% de predição correta no 
 # segundo cenário, com variâncias parecidas, já no terceiro cenário a variação foi extremamente pequena
-# tendo uma porcentagem de predição correta em torno de 76% se fosse com essa variação e tivesse uma porcentagem
+# tendo uma porcentagem de predição correta em torno de 76\% se fosse com essa variação e tivesse uma porcentagem
 # um pouco maior sem dúvidas esse seria o melhor modelo com desempenho muito bom.
 
 
